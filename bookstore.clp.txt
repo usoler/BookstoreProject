@@ -440,7 +440,9 @@
 	(slot bestseller (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;le gustan los libros populares
 	(slot valoracion (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;se deja llevar por las valoraciones del libro
 	(slot moda (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;se deja llevar por las modas
-	(slot autor_extranjero (type SYMBOL) (allowed-symbols Si No Indiferente nulo) (default nulo)))
+	(slot autor_extranjero (type SYMBOL) (allowed-symbols Si No Indiferente nulo) (default nulo))
+	(slot nacionalidad (type STRING) (default "nulo")) ;nacionalidad del lector
+)
 	
 (deftemplate MAIN::datos_preferencias_lector
 	(multislot generos_preferidos (type INSTANCE))
@@ -459,6 +461,11 @@
 ;;--------------------------------------------------------------------------------------------------------------------------
 ;; FUNCTIONS
 ;;--------------------------------------------------------------------------------------------------------------------------
+(deffunction MAIN::pregunta-libre-alfabetica (?pregunta)
+	(format t "%s: (Primera letra en mayuscula, sin acentos y uso de 'ny'. Ejemplo: Espanyola, Inglesa...)" ?pregunta)
+	(bind ?respuesta (read))
+	?respuesta)
+
 (deffunction MAIN::pregunta-libre-numerica (?pregunta ?rango-inicial ?rango-final)
 	(format t "%s (Valor desde %d hasta %d): " ?pregunta ?rango-inicial ?rango-final)
 	(bind ?respuesta (read))
@@ -633,10 +640,19 @@
 	=>
 	(bind ?autor (pregunta-respuesta-unica "Prefiere autores extranjeros?" Si No Indiferente))
 	(modify ?a (autor_extranjero ?autor)))
+	
+(defrule recopilacion-datos-lector::init-nacionalidad "Inicializa la nacionalidad del lector"
+	?n <- (datos_perfil_lector (nacionalidad ?nac))
+	(test (eq ?nac "nulo"))
+	=>
+	(bind ?nac (pregunta-libre-alfabetica "De que nacionalidad eres?"))
+	(modify ?n (nacionalidad ?nac)))
+
+
 
 (defrule recopilacion-datos-lector::cambiar-recopilacion-preferencias "Cambia el foco al modulo de recopilacion de preferencias"
 	(declare (salience 10))
-	?jump <- (datos_perfil_lector (edad ?edad) (horas_dedicadas ?horas) (momento ?momento) (frecuencia ?frec) (lugar ?lugar) (bestseller ?best) (valoracion ?val) (moda ?moda) (autor_extranjero ?autor))
+	?jump <- (datos_perfil_lector (edad ?edad) (horas_dedicadas ?horas) (momento ?momento) (frecuencia ?frec) (lugar ?lugar) (bestseller ?best) (valoracion ?val) (moda ?moda) (autor_extranjero ?autor) (nacionalidad ?nac))
 	(test (> ?edad 0))
 	(test (> ?horas -1))
 	(test (neq ?momento nulo))
@@ -646,6 +662,7 @@
 	(test (neq ?val nulo))
 	(test (neq ?moda nulo))
 	(test (neq ?autor nulo))
+	(test (neq ?nac "nulo"))
 	=>
 	(focus recopilacion-datos-preferencias))
 
