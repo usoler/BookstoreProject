@@ -6,7 +6,6 @@
 ;;--------------------------------------------------------------------------------------------------------------------------
 ;; Ontologia
 ;;--------------------------------------------------------------------------------------------------------------------------
-
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
@@ -28,6 +27,10 @@
 	(single-slot KB_191360_Class7
 		(type STRING)
 ;+		(cardinality 1 1)
+		(create-accessor read-write))
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot Escribe_genero
 ;+		(comment "Relacion de los generos que ha escrito.")
@@ -93,6 +96,10 @@
 ;+		(comment "Relacion de los generos que ha escrito.")
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
+		(create-accessor read-write))
+	(single-slot Nacionalidad
+		(type STRING)
+;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot NombreAutor
 		(type STRING)
@@ -166,7 +173,6 @@
 		(create-accessor read-write)))
 		
 		
-		
 ;;--------------------------------------------------------------------------------------------------------------------------
 ;; Instancias
 ;;--------------------------------------------------------------------------------------------------------------------------
@@ -201,11 +207,13 @@
 	(Escribe_genero
 		[KB_191360_Class23]
 		[KB_191360_Class20])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Stephen King"))
 
 ([KB_191360_Class26] of  Autor
 
 	(Escribe_genero [KB_191360_Class20])
+	(Nacionalidad "Britanica")
 	(NombreAutor "Mary Shelley"))
 
 ([KB_191360_Class28] of  Autor
@@ -213,26 +221,31 @@
 	(Escribe_genero
 		[KB_191360_Class20]
 		[KB_191360_Class23])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Thomas Harris"))
 
 ([KB_191360_Class29] of  Autor
 
 	(Escribe_genero [KB_191360_Class21])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "N Scott Momaday"))
 
 ([KB_191360_Class32] of  Autor
 
 	(Escribe_genero [KB_191360_Class21])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Larry McMurtry"))
 
 ([KB_191360_Class33] of  Autor
 
 	(Escribe_genero [KB_191360_Class22])
+	(Nacionalidad "Britanica")
 	(NombreAutor "Bernard Cornwell"))
 
 ([KB_191360_Class34] of  Autor
 
 	(Escribe_genero [KB_191360_Class22])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Kristin Hannah"))
 
 ([KB_191360_Class36] of  Autor
@@ -240,16 +253,19 @@
 	(Escribe_genero
 		[KB_191360_Class23]
 		[KB_191360_Class22])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Leonard Goldberg"))
 
 ([KB_191360_Class37] of  Autor
 
 	(Escribe_genero [KB_191360_Class23])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Ruth Ware"))
 
 ([KB_191360_Class38] of  Autor
 
 	(Escribe_genero [KB_191360_Class23])
+	(Nacionalidad "Estadounidense")
 	(NombreAutor "Josh Grisham"))
 
 ([KB_191360_Class39] of  Libro
@@ -462,7 +478,7 @@
 ;; FUNCTIONS
 ;;--------------------------------------------------------------------------------------------------------------------------
 (deffunction MAIN::pregunta-libre-alfabetica (?pregunta)
-	(format t "%s: (Primera letra en mayuscula, sin acentos y uso de 'ny'. Ejemplo: Espanyola, Inglesa...)" ?pregunta)
+	(format t "%s: (Ejemplo: Espanyola, Britanica, Estadounidense...): " ?pregunta)
 	(bind ?respuesta (read))
 	?respuesta)
 
@@ -647,8 +663,6 @@
 	=>
 	(bind ?nac (pregunta-libre-alfabetica "De que nacionalidad eres?"))
 	(modify ?n (nacionalidad ?nac)))
-
-
 
 (defrule recopilacion-datos-lector::cambiar-recopilacion-preferencias "Cambia el foco al modulo de recopilacion de preferencias"
 	(declare (salience 10))
@@ -864,6 +878,24 @@
 	(send ?rec put-puntuacion ?p)
 	(send ?rec put-justificaciones $?just)
 	(assert (valorado-libros-valoraciones ?cont))
+	(printout t "Comprobando perfil lector..." crlf))
+	
+(defrule procesado-datos::valorar-autor-extranjero "Se puntuan los libros de autores extranjeros segun perfil lector"
+	?aut <- (object (is-a Autor) (Nacionalidad ?nacionalidad))
+	?cont <- (object (is-a Libro) (Escrito_por ?escrito))
+	(test (eq (instance-name ?aut) (instance-name ?escrito)))
+	?val <- (datos_perfil_lector (nacionalidad ?curr-nac))
+	(test (neq (str-compare ?nacionalidad ?curr-nac) 0))
+	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
+	(test (eq (instance-name ?cont) (instance-name ?conta)))
+	(not (valorado-libros-autor-extranjero ?cont))
+	=>
+	(bind ?p (+ ?p 50))
+	(bind ?text "Prefiere autores extranjeros -> +50")
+	(bind $?just (insert$ $?just (+ (length$ $?just) 1) ?text))
+	(send ?rec put-puntuacion ?p)
+	(send ?rec put-justificaciones $?just)
+	(assert (valorado-libros-autor-extranjero ?cont))
 	(printout t "Comprobando perfil lector..." crlf))
 
 (defrule procesado-datos::valorar-generos-preferidos "Se puntuan los libros de los generos preferidos del lector"
