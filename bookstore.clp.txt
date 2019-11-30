@@ -449,13 +449,10 @@
 ;;--------------------------------------------------------------------------------------------------------------------------
 (deftemplate MAIN::datos_perfil_lector
 	(slot edad (type INTEGER) (default -1)) ;edad del lector
-	(slot horas_dedicadas (type INTEGER) (default -1)) ;horas dedicadas a leer a la semana
-	(slot momento (type SYMBOL) (allowed-symbols Manyana Tarde Noche Indiferente nulo) (default nulo)) ;momento del dia en que lee
 	(slot frecuencia (type SYMBOL) (allowed-symbols Diariamente Habitualmente Esporadicamente Nunca nulo) (default nulo)) ;frecuencia con la que lee
 	(slot lugar (type SYMBOL) (allowed-symbols Casa Biblioteca AireLibre TransportePublico Indiferente nulo) (default nulo)) ; lugar donde suele leer
 	(slot bestseller (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;le gustan los libros populares
 	(slot valoracion (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;se deja llevar por las valoraciones del libro
-	(slot moda (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;se deja llevar por las modas
 	(slot autor_extranjero (type SYMBOL) (allowed-symbols Si No Indiferente nulo) (default nulo))
 	(slot nacionalidad (type STRING) (default "nulo")) ;nacionalidad del lector
 )
@@ -601,20 +598,6 @@
 	(bind ?edad (pregunta-libre-numerica "Que edad tiene?" 1 100))
 	(modify ?a (edad ?edad)))
 	
-(defrule recopilacion-datos-lector::init-horas-dedicadas "Inicializa las horas dedicadas a leer del lector"
-	?h <- (datos_perfil_lector (horas_dedicadas ?horas))
-	(test (< ?horas 0))
-	=>
-	(bind ?horas (pregunta-libre-numerica "Cuantas horas le dedica a leer a la semana?" 0 168))
-	(modify ?h (horas_dedicadas ?horas)))
-
-(defrule recopilacion-datos-lector::init-momento "Inicializa el momento del dia en que suele leer el lector"
-	?m <- (datos_perfil_lector (momento ?momento))
-	(test (eq ?momento nulo))
-	=>
-	(bind ?momento (pregunta-respuesta-unica "En que momento del dia suele leer?" Manyana Tarde Noche Indiferente))
-	(modify ?m (momento ?momento)))
-	
 (defrule recopilacion-datos-lector::init-frecuencia "Inicializa la frecuencia con que lee el lector"
 	?f <- (datos_perfil_lector (frecuencia ?frec))
 	(test (eq ?frec nulo))
@@ -643,13 +626,6 @@
 	(bind ?val (pregunta-respuesta-unica "A la hora de escoger un libro se deja llevar por las valoraciones?" Si No))
 	(modify ?v (valoracion ?val)))
 	
-(defrule recopilacion-datos-lector::init-moda "Inicializa si se deja llevar por las modas el lector"
-	?m <- (datos_perfil_lector (moda ?moda))
-	(test (eq ?moda nulo))
-	=>
-	(bind ?moda (pregunta-respuesta-unica "A la hora de escoger un libro se deja llevar por las modas?" Si No))
-	(modify ?m (moda ?moda)))
-	
 (defrule recopilacion-datos-lector::init-autor-extranjero "Inicializa si prefiere autores extranjeros el lector"
 	?a <- (datos_perfil_lector (autor_extranjero ?autor))
 	(test (eq ?autor nulo))
@@ -666,15 +642,12 @@
 
 (defrule recopilacion-datos-lector::cambiar-recopilacion-preferencias "Cambia el foco al modulo de recopilacion de preferencias"
 	(declare (salience 10))
-	?jump <- (datos_perfil_lector (edad ?edad) (horas_dedicadas ?horas) (momento ?momento) (frecuencia ?frec) (lugar ?lugar) (bestseller ?best) (valoracion ?val) (moda ?moda) (autor_extranjero ?autor) (nacionalidad ?nac))
+	?jump <- (datos_perfil_lector (edad ?edad) (frecuencia ?frec) (lugar ?lugar) (bestseller ?best) (valoracion ?val) (autor_extranjero ?autor) (nacionalidad ?nac))
 	(test (> ?edad 0))
-	(test (> ?horas -1))
-	(test (neq ?momento nulo))
 	(test (neq ?frec nulo))
 	(test (neq ?lugar nulo))
 	(test (neq ?best nulo))
 	(test (neq ?val nulo))
-	(test (neq ?moda nulo))
 	(test (neq ?autor nulo))
 	(test (neq ?nac "nulo"))
 	=>
