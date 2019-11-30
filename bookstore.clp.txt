@@ -56,6 +56,11 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(single-slot Juvenil
+		(type SYMBOL)
+		(allowed-values Si No)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot Bestseller
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
@@ -146,6 +151,11 @@
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
 		(create-accessor read-write))
+	(single-slot Juvenil
+		(type SYMBOL)
+		(allowed-values Si No)
+;+		(cardinality 0 1)
+		(create-accessor read-write))
 	(single-slot Bestseller
 		(type SYMBOL)
 		(allowed-values FALSE TRUE)
@@ -181,7 +191,6 @@
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
-
 ([KB_191360_Class20] of  Genero
 
 	(NombreGenero "Horror"))
@@ -275,6 +284,7 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class20])
 	(Escrito_por [KB_191360_Class25])
+	(Juvenil No)
 	(Longitud Largo)
 	(Titulo "The Institute")
 	(Valoracion Buena))
@@ -285,6 +295,7 @@
 	(Dificultad Facil)
 	(Es_genero [KB_191360_Class20])
 	(Escrito_por [KB_191360_Class26])
+	(Juvenil Si)
 	(Longitud Corto)
 	(Titulo "Frankenstein")
 	(Valoracion Buena))
@@ -295,6 +306,7 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class20])
 	(Escrito_por [KB_191360_Class28])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "The Silence of the Lambs")
 	(Valoracion Buena))
@@ -305,6 +317,7 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class21])
 	(Escrito_por [KB_191360_Class29])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "House Made of Dawn")
 	(Valoracion Buena))
@@ -315,6 +328,7 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class21])
 	(Escrito_por [KB_191360_Class32])
+	(Juvenil No)
 	(Longitud Largo)
 	(Titulo "Lonesome Dove")
 	(Valoracion Buena))
@@ -328,6 +342,7 @@
 		[KB_191360_Class24]
 		[KB_191360_Class22])
 	(Escrito_por [KB_191360_Class33])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "Sword of Kings: A Novel")
 	(Valoracion Buena))
@@ -340,6 +355,7 @@
 		[KB_191360_Class24]
 		[KB_191360_Class22])
 	(Escrito_por [KB_191360_Class33])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "Lords of the North")
 	(Valoracion Buena))
@@ -350,6 +366,7 @@
 	(Dificultad Facil)
 	(Es_genero [KB_191360_Class22])
 	(Escrito_por [KB_191360_Class34])
+	(Juvenil No)
 	(Longitud Largo)
 	(Titulo "The Nightingale")
 	(Valoracion Buena))
@@ -360,6 +377,7 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class22])
 	(Escrito_por [KB_191360_Class36])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "The Daughter of Sherlock Holmes: A Mystery")
 	(Valoracion Buena))
@@ -370,6 +388,7 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class23])
 	(Escrito_por [KB_191360_Class36])
+	(Juvenil No)
 	(Longitud Largo)
 	(Titulo "Fatal Care")
 	(Valoracion Mala))
@@ -380,6 +399,7 @@
 	(Dificultad Facil)
 	(Es_genero [KB_191360_Class23])
 	(Escrito_por [KB_191360_Class37])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "The Turn of the Key")
 	(Valoracion Buena))
@@ -391,9 +411,11 @@
 	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class23])
 	(Escrito_por [KB_191360_Class38])
+	(Juvenil No)
 	(Longitud Corto)
 	(Titulo "The Guardians")
 	(Valoracion Buena)))
+
 
 
 
@@ -869,6 +891,23 @@
 	(send ?rec put-puntuacion ?p)
 	(send ?rec put-justificaciones $?just)
 	(assert (valorado-libros-autor-extranjero ?cont))
+	(printout t "Comprobando perfil lector..." crlf))
+	
+(defrule procesado-datos::valorar-edad "Se puntuan los libros juveniles segun perfil lector"
+	?cont <- (object (is-a Libro) (Juvenil ?juvenil))
+	(test (eq ?juvenil Si))
+	?val <- (datos_perfil_lector (edad ?curr-juv))
+	(test (< ?curr-juv 18))
+	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
+	(test (eq (instance-name ?cont) (instance-name ?conta)))
+	(not (valorado-libros-juvenil ?cont))
+	=>
+	(bind ?p (+ ?p 50))
+	(bind ?text "Es un libro para jovenes -> +50")
+	(bind $?just (insert$ $?just (+ (length$ $?just) 1) ?text))
+	(send ?rec put-puntuacion ?p)
+	(send ?rec put-justificaciones $?just)
+	(assert (valorado-libros-juvenil ?cont))
 	(printout t "Comprobando perfil lector..." crlf))
 
 (defrule procesado-datos::valorar-generos-preferidos "Se puntuan los libros de los generos preferidos del lector"
