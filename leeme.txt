@@ -1,0 +1,16 @@
+Miembros del equipo:
+Luis Oriol Soler Cruz
+Roger Gonzalez Herrera
+Federico Rubinstein Pérez
+
+Prototipo inicial:
+Ahora mismo nuestro proyecto es totalmente funcional. 
+Primero realiza una serie de preguntas al usuario.
+A partir de estas preguntas, se procesarán, puntuando nuestros libros.
+Después, generará una solución ordenando los libros y finalmente mostrará los 3 libros con mejor puntuación.
+
+De cara a la entrega final:
+Tenemos pensado mejorar nuestra ontologia, tratando de ser lo más simple posible.
+Añadiremos muchas más instancias.
+Añadiremos alguna pregunta para poder descartar de la solución propuesta libros que ya haya leido el usuario.
+Realizaremos una detallada documentación de la práctica.
