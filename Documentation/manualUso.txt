@@ -1,0 +1,7 @@
+ctrl + L 	<-	Load file
+
+
+ctrl + E	<-	Reset
+
+
+ctrl + R 	<- 	Run
