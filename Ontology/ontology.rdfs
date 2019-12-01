@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY a 'http://protege.stanford.edu/system#'>
+	 <!ENTITY kb 'http://protege.stanford.edu/kb#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+]>
+<rdf:RDF xmlns:rdf="&rdf;"
+	 xmlns:a="&a;"
+	 xmlns:kb="&kb;"
+	 xmlns:rdfs="&rdfs;">
+<rdf:Property rdf:about="&kb;Anyo"
+	 a:maxCardinality="1"
+	 a:range="integer"
+	 rdfs:label="Anyo">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;Autor"
+	 rdfs:label="Autor">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;Autores_genero"
+	 rdfs:comment="Relacion de los autores que escriben libros de este genero."
+	 rdfs:label="Autores_genero">
+	<rdfs:range rdf:resource="&kb;Autor"/>
+	<rdfs:domain rdf:resource="&kb;Genero"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Autores_nacionalidad"
+	 rdfs:label="Autores_nacionalidad">
+	<rdfs:range rdf:resource="&kb;Autor"/>
+	<rdfs:domain rdf:resource="&kb;Nacionalidad"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Bestseller"
+	 a:maxCardinality="1"
+	 a:range="boolean"
+	 rdfs:label="Bestseller">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Dificultad"
+	 a:maxCardinality="1"
+	 a:maxValue="10"
+	 a:minValue="0"
+	 a:range="integer"
+	 rdfs:label="Dificultad">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Es_genero"
+	 rdfs:comment="Relacion con el genero que es."
+	 rdfs:label="Es_genero">
+	<rdfs:range rdf:resource="&kb;Genero"/>
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Es_nacionalidad"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="Es_nacionalidad">
+	<rdfs:domain rdf:resource="&kb;Autor"/>
+	<rdfs:range rdf:resource="&kb;Nacionalidad"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Es_tematica"
+	 rdfs:label="Es_tematica">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&kb;Tematica"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Escribe_genero"
+	 rdfs:comment="Relacion de los generos que ha escrito."
+	 rdfs:label="Escribe_genero">
+	<rdfs:domain rdf:resource="&kb;Autor"/>
+	<rdfs:range rdf:resource="&kb;Genero"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Escrito_por"
+	 a:maxCardinality="1"
+	 rdfs:comment="Relacion con el autor que ha escrito el libro."
+	 rdfs:label="Escrito_por">
+	<rdfs:range rdf:resource="&kb;Autor"/>
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;Genero"
+	 rdfs:label="Genero">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;Ha_escrito"
+	 rdfs:comment="Relacion de los libros que ha escrito."
+	 rdfs:label="Ha_escrito">
+	<rdfs:domain rdf:resource="&kb;Autor"/>
+	<rdfs:range rdf:resource="&kb;Libro"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Juvenil"
+	 a:maxCardinality="1"
+	 a:range="boolean"
+	 rdfs:label="Juvenil">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;KB_191360_Class7"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="KB_191360_Class7">
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;KB_191360_Class8"
+	 a:maxCardinality="1"
+	 rdfs:label="KB_191360_Class8">
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;Libro"
+	 rdfs:label="Libro">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;Libros_genero"
+	 rdfs:comment="Relacion de los libros que forman este genero."
+	 rdfs:label="Libros_genero">
+	<rdfs:domain rdf:resource="&kb;Genero"/>
+	<rdfs:range rdf:resource="&kb;Libro"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Libros_tematica"
+	 rdfs:label="Libros_tematica">
+	<rdfs:range rdf:resource="&kb;Libro"/>
+	<rdfs:domain rdf:resource="&kb;Tematica"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Longitud"
+	 a:maxCardinality="1"
+	 a:range="integer"
+	 rdfs:label="Longitud">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;Nacionalidad"
+	 rdfs:label="Nacionalidad">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;NombreAutor"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="NombreAutor">
+	<rdfs:domain rdf:resource="&kb;Autor"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;NombreGenero"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="NombreGenero">
+	<rdfs:domain rdf:resource="&kb;Genero"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;NombreNacionalidad"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="NombreNacionalidad">
+	<rdfs:domain rdf:resource="&kb;Nacionalidad"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;NombreTematica"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="NombreTematica">
+	<rdfs:domain rdf:resource="&kb;Tematica"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdfs:Class rdf:about="&kb;Tematica"
+	 rdfs:label="Tematica">
+	<rdfs:subClassOf rdf:resource="&rdfs;Resource"/>
+</rdfs:Class>
+<rdf:Property rdf:about="&kb;Titulo"
+	 a:maxCardinality="1"
+	 a:minCardinality="1"
+	 rdfs:label="Titulo">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;Valoracion"
+	 a:maxCardinality="1"
+	 a:maxValue="10"
+	 a:minValue="0"
+	 a:range="integer"
+	 rdfs:label="Valoracion">
+	<rdfs:domain rdf:resource="&kb;Libro"/>
+	<rdfs:range rdf:resource="&rdfs;Literal"/>
+</rdf:Property>
+<rdf:Property rdf:about="&kb;inverse_of_Es_genero"
+	 rdfs:label="inverse_of_Es_genero">
+	<rdfs:range rdf:resource="&kb;Libro"/>
+</rdf:Property>
+</rdf:RDF>

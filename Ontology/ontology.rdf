@@ -1,0 +1,343 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE rdf:RDF [
+	 <!ENTITY rdf 'http://www.w3.org/1999/02/22-rdf-syntax-ns#'>
+	 <!ENTITY kb 'http://protege.stanford.edu/kb#'>
+	 <!ENTITY rdfs 'http://www.w3.org/2000/01/rdf-schema#'>
+]>
+<rdf:RDF xmlns:rdf="&rdf;"
+	 xmlns:kb="&kb;"
+	 xmlns:rdfs="&rdfs;">
+<kb:Genero rdf:about="&kb;KB_191360_Class20"
+	 kb:NombreGenero="Horror"
+	 rdfs:label="Horror">
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class25"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class26"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class28"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class39"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class40"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class41"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;KB_191360_Class21"
+	 kb:NombreGenero="Western"
+	 rdfs:label="Western">
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class29"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class32"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class42"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class43"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;KB_191360_Class22"
+	 kb:NombreGenero="Historical"
+	 rdfs:label="Historical">
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class33"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class34"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class36"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class44"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class45"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class46"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class47"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;KB_191360_Class23"
+	 kb:NombreGenero="Thriller"
+	 rdfs:label="Thriller">
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class25"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class28"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class36"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class37"/>
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class38"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class48"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class49"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class50"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;KB_191360_Class24"
+	 kb:NombreGenero="War"
+	 rdfs:label="War">
+	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class33"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class44"/>
+	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class45"/>
+</kb:Genero>
+<kb:Autor rdf:about="&kb;KB_191360_Class25"
+	 kb:NombreAutor="Stephen King"
+	 rdfs:label="Stephen King">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class20"/>
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class26"
+	 kb:NombreAutor="Mary Shelley"
+	 rdfs:label="Mary Shelley">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class20"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class40"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class28"
+	 kb:NombreAutor="Thomas Harris"
+	 rdfs:label="Thomas Harris">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class20"/>
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class41"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class29"
+	 kb:NombreAutor="N Scott Momaday"
+	 rdfs:label="N Scott Momaday">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class21"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class42"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class32"
+	 kb:NombreAutor="Larry McMurtry"
+	 rdfs:label="Larry McMurtry">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class21"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class43"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class33"
+	 kb:NombreAutor="Bernard Cornwell"
+	 rdfs:label="Bernard Cornwell">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class44"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class45"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class34"
+	 kb:NombreAutor="Kristin Hannah"
+	 rdfs:label="Kristin Hannah">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class46"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class36"
+	 kb:NombreAutor="Leonard Goldberg"
+	 rdfs:label="Leonard Goldberg">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class47"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class48"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class37"
+	 kb:NombreAutor="Ruth Ware"
+	 rdfs:label="Ruth Ware">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class49"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Autor rdf:about="&kb;KB_191360_Class38"
+	 kb:NombreAutor="Josh Grisham"
+	 rdfs:label="Josh Grisham">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Ha_escrito rdf:resource="&kb;KB_191360_Class50"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;KB_191360_Class39"
+	 kb:Anyo="2019"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Longitud="576"
+	 kb:Titulo="The Institute"
+	 kb:Valoracion="9"
+	 rdfs:label="The Institute">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class20"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class25"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class18"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class40"
+	 kb:Anyo="2015"
+	 kb:Bestseller="false"
+	 kb:Dificultad="5"
+	 kb:Longitud="160"
+	 kb:Titulo="Frankenstein"
+	 kb:Valoracion="8"
+	 rdfs:label="Frankenstein">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class20"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class26"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class13"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class41"
+	 kb:Anyo="1991"
+	 kb:Dificultad="7"
+	 kb:Longitud="384"
+	 kb:Titulo="The Silence of the Lambs"
+	 kb:Valoracion="8"
+	 rdfs:label="The Silence of the Lambs">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class20"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class28"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class9"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class42"
+	 kb:Anyo="2010"
+	 kb:Dificultad="6"
+	 kb:Juvenil="false"
+	 kb:Longitud="185"
+	 kb:Titulo="House Made of Dawn"
+	 kb:Valoracion="6"
+	 rdfs:label="House Made of Dawn">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class21"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class29"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class14"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class43"
+	 kb:Anyo="2010"
+	 kb:Dificultad="6"
+	 kb:Longitud="864"
+	 kb:Titulo="Lonesome Dove"
+	 kb:Valoracion="8"
+	 rdfs:label="Lonesome Dove">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class21"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class32"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class14"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class44"
+	 kb:Anyo="2019"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Longitud="352"
+	 kb:Titulo="Sword of Kings: A Novel"
+	 kb:Valoracion="8"
+	 rdfs:label="Sword of Kings: A Novel">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class33"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class16"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class45"
+	 kb:Anyo="2008"
+	 kb:Dificultad="6"
+	 kb:Longitud="352"
+	 kb:Titulo="Lords of the North"
+	 kb:Valoracion="8"
+	 rdfs:label="Lords of the North">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class33"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class16"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class46"
+	 kb:Anyo="2017"
+	 kb:Dificultad="6"
+	 kb:Longitud="608"
+	 kb:Titulo="The Nightingale"
+	 kb:Valoracion="8"
+	 rdfs:label="The Nightingale">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class34"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class19"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class47"
+	 kb:Anyo="2018"
+	 kb:Dificultad="7"
+	 kb:Longitud="320"
+	 kb:Titulo="The Daughter of Sherlock Holmes: A Mystery"
+	 kb:Valoracion="7"
+	 rdfs:label="The Daughter of Sherlock Holmes: A Mystery">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class36"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class17"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class48"
+	 kb:Anyo="2001"
+	 kb:Dificultad="7"
+	 kb:Longitud="416"
+	 kb:Titulo="Fatal Care"
+	 kb:Valoracion="7"
+	 rdfs:label="Fatal Care">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class36"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class12"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class8"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class49"
+	 kb:Anyo="2019"
+	 kb:Dificultad="7"
+	 kb:Longitud="352"
+	 kb:Titulo="The Turn of the Key"
+	 kb:Valoracion="7"
+	 rdfs:label="The Turn of the Key">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class37"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class6"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;KB_191360_Class50"
+	 kb:Anyo="2019"
+	 kb:Bestseller="true"
+	 kb:Longitud="384"
+	 kb:Titulo="The Guardians"
+	 kb:Valoracion="9"
+	 rdfs:label="The Guardians">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class23"/>
+	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class38"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class8"/>
+</kb:Libro>
+<kb:Tematica rdf:about="&kb;ontology_Class12"
+	 kb:NombreTematica="Medical"
+	 rdfs:label="Medical">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class48"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class13"
+	 kb:NombreTematica="Monsters"
+	 rdfs:label="Monsters">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class40"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class14"
+	 kb:NombreTematica="NativeAmerican"
+	 rdfs:label="NativeAmerican">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class42"/>
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class43"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class16"
+	 kb:NombreTematica="Medieval"
+	 rdfs:label="Medieval">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class44"/>
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class45"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class17"
+	 kb:NombreTematica="Detective"
+	 rdfs:label="Detective">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class47"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class18"
+	 kb:NombreTematica="Superpowers"
+	 rdfs:label="Superpowers">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class39"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class19"
+	 kb:NombreTematica="WorldWar"
+	 rdfs:label="WorldWar">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class46"/>
+</kb:Tematica>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class3"
+	 kb:NombreNacionalidad="Britanica"
+	 rdfs:label="Britanica">
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class26"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class33"/>
+</kb:Nacionalidad>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class4"
+	 kb:NombreNacionalidad="Estadounidense"
+	 rdfs:label="Estadounidense">
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class25"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class28"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class29"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class32"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class34"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class36"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class37"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class38"/>
+</kb:Nacionalidad>
+<kb:Tematica rdf:about="&kb;ontology_Class6"
+	 kb:NombreTematica="Psychological"
+	 rdfs:label="Psychological">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class49"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class8"
+	 kb:NombreTematica="Crime"
+	 rdfs:label="Crime">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class48"/>
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class50"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class9"
+	 kb:NombreTematica="SerialKiller"
+	 rdfs:label="SerialKiller">
+	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class41"/>
+</kb:Tematica>
+</rdf:RDF>

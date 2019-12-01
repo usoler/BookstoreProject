@@ -1,0 +1,360 @@
+; Sun Dec 01 20:16:26 CET 2019
+; 
+;+ (version "3.5")
+;+ (build "Build 663")
+
+([KB_191360_Class20] of  Genero
+
+	(Autores_genero
+		[KB_191360_Class28]
+		[KB_191360_Class26]
+		[KB_191360_Class25])
+	(Libros_genero
+		[KB_191360_Class39]
+		[KB_191360_Class41]
+		[KB_191360_Class40])
+	(NombreGenero "Horror"))
+
+([KB_191360_Class21] of  Genero
+
+	(Autores_genero
+		[KB_191360_Class32]
+		[KB_191360_Class29])
+	(Libros_genero
+		[KB_191360_Class43]
+		[KB_191360_Class42])
+	(NombreGenero "Western"))
+
+([KB_191360_Class22] of  Genero
+
+	(Autores_genero
+		[KB_191360_Class36]
+		[KB_191360_Class34]
+		[KB_191360_Class33])
+	(Libros_genero
+		[KB_191360_Class47]
+		[KB_191360_Class46]
+		[KB_191360_Class45]
+		[KB_191360_Class44])
+	(NombreGenero "Historical"))
+
+([KB_191360_Class23] of  Genero
+
+	(Autores_genero
+		[KB_191360_Class25]
+		[KB_191360_Class38]
+		[KB_191360_Class37]
+		[KB_191360_Class36]
+		[KB_191360_Class28])
+	(Libros_genero
+		[KB_191360_Class49]
+		[KB_191360_Class48]
+		[KB_191360_Class50])
+	(NombreGenero "Thriller"))
+
+([KB_191360_Class24] of  Genero
+
+	(Autores_genero [KB_191360_Class33])
+	(Libros_genero
+		[KB_191360_Class44]
+		[KB_191360_Class45])
+	(NombreGenero "War"))
+
+([KB_191360_Class25] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero
+		[KB_191360_Class23]
+		[KB_191360_Class20])
+	(NombreAutor "Stephen King"))
+
+([KB_191360_Class26] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero [KB_191360_Class20])
+	(Ha_escrito [KB_191360_Class40])
+	(NombreAutor "Mary Shelley"))
+
+([KB_191360_Class28] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero
+		[KB_191360_Class20]
+		[KB_191360_Class23])
+	(Ha_escrito [KB_191360_Class41])
+	(NombreAutor "Thomas Harris"))
+
+([KB_191360_Class29] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class21])
+	(Ha_escrito [KB_191360_Class42])
+	(NombreAutor "N Scott Momaday"))
+
+([KB_191360_Class32] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class21])
+	(Ha_escrito [KB_191360_Class43])
+	(NombreAutor "Larry McMurtry"))
+
+([KB_191360_Class33] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero
+		[KB_191360_Class22]
+		[KB_191360_Class24])
+	(Ha_escrito
+		[KB_191360_Class45]
+		[KB_191360_Class44])
+	(NombreAutor "Bernard Cornwell"))
+
+([KB_191360_Class34] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class22])
+	(Ha_escrito [KB_191360_Class46])
+	(NombreAutor "Kristin Hannah"))
+
+([KB_191360_Class36] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero
+		[KB_191360_Class23]
+		[KB_191360_Class22])
+	(Ha_escrito
+		[KB_191360_Class48]
+		[KB_191360_Class47])
+	(NombreAutor "Leonard Goldberg"))
+
+([KB_191360_Class37] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class23])
+	(Ha_escrito [KB_191360_Class49])
+	(NombreAutor "Ruth Ware"))
+
+([KB_191360_Class38] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class23])
+	(Ha_escrito [KB_191360_Class50])
+	(NombreAutor "Josh Grisham"))
+
+([KB_191360_Class39] of  Libro
+
+	(Anyo 2019)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class20])
+	(Es_tematica [ontology_Class18])
+	(Escrito_por [KB_191360_Class25])
+	(Longitud 576)
+	(Titulo "The Institute")
+	(Valoracion 9))
+
+([KB_191360_Class40] of  Libro
+
+	(Anyo 2015)
+	(Bestseller FALSE)
+	(Dificultad 5)
+	(Es_genero [KB_191360_Class20])
+	(Es_tematica [ontology_Class13])
+	(Escrito_por [KB_191360_Class26])
+	(Longitud 160)
+	(Titulo "Frankenstein")
+	(Valoracion 8))
+
+([KB_191360_Class41] of  Libro
+
+	(Anyo 1991)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class20])
+	(Es_tematica [ontology_Class9])
+	(Escrito_por [KB_191360_Class28])
+	(Longitud 384)
+	(Titulo "The Silence of the Lambs")
+	(Valoracion 8))
+
+([KB_191360_Class42] of  Libro
+
+	(Anyo 2010)
+	(Dificultad 6)
+	(Es_genero [KB_191360_Class21])
+	(Es_tematica [ontology_Class14])
+	(Escrito_por [KB_191360_Class29])
+	(Juvenil FALSE)
+	(Longitud 185)
+	(Titulo "House Made of Dawn")
+	(Valoracion 6))
+
+([KB_191360_Class43] of  Libro
+
+	(Anyo 2010)
+	(Dificultad 6)
+	(Es_genero [KB_191360_Class21])
+	(Es_tematica [ontology_Class14])
+	(Escrito_por [KB_191360_Class32])
+	(Longitud 864)
+	(Titulo "Lonesome Dove")
+	(Valoracion 8))
+
+([KB_191360_Class44] of  Libro
+
+	(Anyo 2019)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero
+		[KB_191360_Class24]
+		[KB_191360_Class22])
+	(Es_tematica [ontology_Class16])
+	(Escrito_por [KB_191360_Class33])
+	(Longitud 352)
+	(Titulo "Sword of Kings: A Novel")
+	(Valoracion 8))
+
+([KB_191360_Class45] of  Libro
+
+	(Anyo 2008)
+	(Dificultad 6)
+	(Es_genero
+		[KB_191360_Class24]
+		[KB_191360_Class22])
+	(Es_tematica [ontology_Class16])
+	(Escrito_por [KB_191360_Class33])
+	(Longitud 352)
+	(Titulo "Lords of the North")
+	(Valoracion 8))
+
+([KB_191360_Class46] of  Libro
+
+	(Anyo 2017)
+	(Dificultad 6)
+	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class19])
+	(Escrito_por [KB_191360_Class34])
+	(Longitud 608)
+	(Titulo "The Nightingale")
+	(Valoracion 8))
+
+([KB_191360_Class47] of  Libro
+
+	(Anyo 2018)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class17])
+	(Escrito_por [KB_191360_Class36])
+	(Longitud 320)
+	(Titulo "The Daughter of Sherlock Holmes: A Mystery")
+	(Valoracion 7))
+
+([KB_191360_Class48] of  Libro
+
+	(Anyo 2001)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class23])
+	(Es_tematica
+		[ontology_Class8]
+		[ontology_Class12])
+	(Escrito_por [KB_191360_Class36])
+	(Longitud 416)
+	(Titulo "Fatal Care")
+	(Valoracion 7))
+
+([KB_191360_Class49] of  Libro
+
+	(Anyo 2019)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class23])
+	(Es_tematica [ontology_Class6])
+	(Escrito_por [KB_191360_Class37])
+	(Longitud 352)
+	(Titulo "The Turn of the Key")
+	(Valoracion 7))
+
+([KB_191360_Class50] of  Libro
+
+	(Anyo 2019)
+	(Bestseller TRUE)
+	(Es_genero [KB_191360_Class23])
+	(Es_tematica [ontology_Class8])
+	(Escrito_por [KB_191360_Class38])
+	(Longitud 384)
+	(Titulo "The Guardians")
+	(Valoracion 9))
+
+([ontology_Class12] of  Tematica
+
+	(Libros_tematica [KB_191360_Class48])
+	(NombreTematica "Medical"))
+
+([ontology_Class13] of  Tematica
+
+	(Libros_tematica [KB_191360_Class40])
+	(NombreTematica "Monsters"))
+
+([ontology_Class14] of  Tematica
+
+	(Libros_tematica
+		[KB_191360_Class43]
+		[KB_191360_Class42])
+	(NombreTematica "NativeAmerican"))
+
+([ontology_Class16] of  Tematica
+
+	(Libros_tematica
+		[KB_191360_Class44]
+		[KB_191360_Class45])
+	(NombreTematica "Medieval"))
+
+([ontology_Class17] of  Tematica
+
+	(Libros_tematica [KB_191360_Class47])
+	(NombreTematica "Detective"))
+
+([ontology_Class18] of  Tematica
+
+	(Libros_tematica [KB_191360_Class39])
+	(NombreTematica "Superpowers"))
+
+([ontology_Class19] of  Tematica
+
+	(Libros_tematica [KB_191360_Class46])
+	(NombreTematica "WorldWar"))
+
+([ontology_Class3] of  Nacionalidad
+
+	(Autores_nacionalidad
+		[KB_191360_Class33]
+		[KB_191360_Class26])
+	(NombreNacionalidad "Britanica"))
+
+([ontology_Class4] of  Nacionalidad
+
+	(Autores_nacionalidad
+		[KB_191360_Class38]
+		[KB_191360_Class34]
+		[KB_191360_Class32]
+		[KB_191360_Class36]
+		[KB_191360_Class29]
+		[KB_191360_Class37]
+		[KB_191360_Class25]
+		[KB_191360_Class28])
+	(NombreNacionalidad "Estadounidense"))
+
+([ontology_Class6] of  Tematica
+
+	(Libros_tematica [KB_191360_Class49])
+	(NombreTematica "Psychological"))
+
+([ontology_Class8] of  Tematica
+
+	(Libros_tematica
+		[KB_191360_Class50]
+		[KB_191360_Class48])
+	(NombreTematica "Crime"))
+
+([ontology_Class9] of  Tematica
+
+	(Libros_tematica [KB_191360_Class41])
+	(NombreTematica "SerialKiller"))
