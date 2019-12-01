@@ -1,4 +1,4 @@
-; Sat Nov 23 18:58:10 CET 2019
+; Sat Nov 9 18:58:10 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
@@ -9,6 +9,10 @@
 (defclass %3ACLIPS_TOP_LEVEL_SLOT_CLASS "Fake class to save top-level slot information"
 	(is-a USER)
 	(role abstract)
+	(single-slot NombreTematica
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(multislot Ha_escrito
 ;+		(comment "Relacion de los libros que ha escrito.")
 		(type INSTANCE)
@@ -28,18 +32,23 @@
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
-	(single-slot Nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
+	(single-slot Es_nacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(multislot Escribe_genero
 ;+		(comment "Relacion de los generos que ha escrito.")
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
 		(create-accessor read-write))
+	(multislot Es_tematica
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+		(create-accessor read-write))
 	(single-slot Dificultad
-		(type SYMBOL)
-		(allowed-values Facil Dificil)
+		(type INTEGER)
+		(range 0 10)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot Libros_genero
@@ -58,7 +67,7 @@
 		(create-accessor read-write))
 	(single-slot Juvenil
 		(type SYMBOL)
-		(allowed-values Si No)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot Bestseller
@@ -75,8 +84,8 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Valoracion
-		(type SYMBOL)
-		(allowed-values Buena Mala)
+		(type INTEGER)
+		(range 0 10)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot Autores_genero
@@ -84,13 +93,28 @@
 		(type INSTANCE)
 ;+		(allowed-classes Autor)
 		(create-accessor read-write))
+	(multislot inverse_of_Es_genero
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write))
 	(single-slot NombreAutor
 		(type STRING)
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
+	(multislot Libros_tematica
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write))
+	(multislot Autores_nacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+		(create-accessor read-write))
+	(single-slot NombreNacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write))
 	(single-slot Longitud
-		(type SYMBOL)
-		(allowed-values Corto Largo)
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
@@ -102,10 +126,6 @@
 		(type INSTANCE)
 ;+		(allowed-classes Genero)
 		(create-accessor read-write))
-	(single-slot Nacionalidad
-		(type STRING)
-;+		(cardinality 0 1)
-		(create-accessor read-write))
 	(single-slot NombreAutor
 		(type STRING)
 ;+		(cardinality 1 1)
@@ -114,6 +134,11 @@
 ;+		(comment "Relacion de los libros que ha escrito.")
 		(type INSTANCE)
 ;+		(allowed-classes Libro)
+		(create-accessor read-write))
+	(single-slot Es_nacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Nacionalidad)
+;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
 (defclass Genero
@@ -137,13 +162,17 @@
 (defclass Libro
 	(is-a USER)
 	(role concrete)
+	(multislot Es_tematica
+		(type INSTANCE)
+;+		(allowed-classes Tematica)
+		(create-accessor read-write))
 	(single-slot Anyo
 		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot Dificultad
-		(type SYMBOL)
-		(allowed-values Facil Dificil)
+		(type INTEGER)
+		(range 0 10)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(multislot Es_genero
@@ -153,7 +182,7 @@
 		(create-accessor read-write))
 	(single-slot Juvenil
 		(type SYMBOL)
-		(allowed-values Si No)
+		(allowed-values FALSE TRUE)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot Bestseller
@@ -166,8 +195,8 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write))
 	(single-slot Valoracion
-		(type SYMBOL)
-		(allowed-values Buena Mala)
+		(type INTEGER)
+		(range 0 10)
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot Escrito_por
@@ -177,244 +206,401 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write))
 	(single-slot Longitud
-		(type SYMBOL)
-		(allowed-values Corto Largo)
+		(type INTEGER)
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
-		
+
+(defclass Tematica
+	(is-a USER)
+	(role concrete)
+	(multislot Libros_tematica
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write))
+	(single-slot NombreTematica
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+(defclass Nacionalidad
+	(is-a USER)
+	(role concrete)
+	(multislot Autores_nacionalidad
+		(type INSTANCE)
+;+		(allowed-classes Autor)
+		(create-accessor read-write))
+	(single-slot NombreNacionalidad
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
+
+
+
+
 		
 ;;--------------------------------------------------------------------------------------------------------------------------
 ;; Instancias
 ;;--------------------------------------------------------------------------------------------------------------------------
 (definstances instancias
-; Sat Nov 23 18:58:10 CET 2019
+; Sat Nov 9 18:58:10 CET 2019
 ; 
 ;+ (version "3.5")
 ;+ (build "Build 663")
 ([KB_191360_Class20] of  Genero
 
+	(Autores_genero
+		[KB_191360_Class28]
+		[KB_191360_Class26]
+		[KB_191360_Class25])
+	(Libros_genero
+		[KB_191360_Class39]
+		[KB_191360_Class41]
+		[KB_191360_Class40])
 	(NombreGenero "Horror"))
 
 ([KB_191360_Class21] of  Genero
 
+	(Autores_genero
+		[KB_191360_Class32]
+		[KB_191360_Class29])
+	(Libros_genero
+		[KB_191360_Class43]
+		[KB_191360_Class42])
 	(NombreGenero "Western"))
 
 ([KB_191360_Class22] of  Genero
 
+	(Autores_genero
+		[KB_191360_Class36]
+		[KB_191360_Class34]
+		[KB_191360_Class33])
+	(Libros_genero
+		[KB_191360_Class47]
+		[KB_191360_Class46]
+		[KB_191360_Class45]
+		[KB_191360_Class44])
 	(NombreGenero "Historical"))
 
 ([KB_191360_Class23] of  Genero
 
+	(Autores_genero
+		[KB_191360_Class25]
+		[KB_191360_Class38]
+		[KB_191360_Class37]
+		[KB_191360_Class36]
+		[KB_191360_Class28])
+	(Libros_genero
+		[KB_191360_Class49]
+		[KB_191360_Class48]
+		[KB_191360_Class50])
 	(NombreGenero "Thriller"))
 
 ([KB_191360_Class24] of  Genero
 
+	(Autores_genero [KB_191360_Class33])
+	(Libros_genero
+		[KB_191360_Class44]
+		[KB_191360_Class45])
 	(NombreGenero "War"))
 
 ([KB_191360_Class25] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero
 		[KB_191360_Class23]
 		[KB_191360_Class20])
-	(Nacionalidad "Estadounidense")
 	(NombreAutor "Stephen King"))
 
 ([KB_191360_Class26] of  Autor
 
+	(Es_nacionalidad [ontology_Class3])
 	(Escribe_genero [KB_191360_Class20])
-	(Nacionalidad "Britanica")
+	(Ha_escrito [KB_191360_Class40])
 	(NombreAutor "Mary Shelley"))
 
 ([KB_191360_Class28] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero
 		[KB_191360_Class20]
 		[KB_191360_Class23])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito [KB_191360_Class41])
 	(NombreAutor "Thomas Harris"))
 
 ([KB_191360_Class29] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero [KB_191360_Class21])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito [KB_191360_Class42])
 	(NombreAutor "N Scott Momaday"))
 
 ([KB_191360_Class32] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero [KB_191360_Class21])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito [KB_191360_Class43])
 	(NombreAutor "Larry McMurtry"))
 
 ([KB_191360_Class33] of  Autor
 
-	(Escribe_genero [KB_191360_Class22])
-	(Nacionalidad "Britanica")
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero
+		[KB_191360_Class22]
+		[KB_191360_Class24])
+	(Ha_escrito
+		[KB_191360_Class45]
+		[KB_191360_Class44])
 	(NombreAutor "Bernard Cornwell"))
 
 ([KB_191360_Class34] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero [KB_191360_Class22])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito [KB_191360_Class46])
 	(NombreAutor "Kristin Hannah"))
 
 ([KB_191360_Class36] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero
 		[KB_191360_Class23]
 		[KB_191360_Class22])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito
+		[KB_191360_Class48]
+		[KB_191360_Class47])
 	(NombreAutor "Leonard Goldberg"))
 
 ([KB_191360_Class37] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero [KB_191360_Class23])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito [KB_191360_Class49])
 	(NombreAutor "Ruth Ware"))
 
 ([KB_191360_Class38] of  Autor
 
+	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero [KB_191360_Class23])
-	(Nacionalidad "Estadounidense")
+	(Ha_escrito [KB_191360_Class50])
 	(NombreAutor "Josh Grisham"))
 
 ([KB_191360_Class39] of  Libro
 
 	(Anyo 2019)
 	(Bestseller TRUE)
-	(Dificultad Dificil)
+	(Dificultad 7)
 	(Es_genero [KB_191360_Class20])
+	(Es_tematica [ontology_Class18])
 	(Escrito_por [KB_191360_Class25])
-	(Juvenil No)
-	(Longitud Largo)
+	(Longitud 576)
 	(Titulo "The Institute")
-	(Valoracion Buena))
+	(Valoracion 9))
 
 ([KB_191360_Class40] of  Libro
 
 	(Anyo 2015)
-	(Dificultad Facil)
+	(Bestseller FALSE)
+	(Dificultad 5)
 	(Es_genero [KB_191360_Class20])
+	(Es_tematica [ontology_Class13])
 	(Escrito_por [KB_191360_Class26])
-	(Juvenil Si)
-	(Longitud Corto)
+	(Longitud 160)
 	(Titulo "Frankenstein")
-	(Valoracion Buena))
+	(Valoracion 8))
 
 ([KB_191360_Class41] of  Libro
 
 	(Anyo 1991)
-	(Dificultad Dificil)
+	(Dificultad 7)
 	(Es_genero [KB_191360_Class20])
+	(Es_tematica [ontology_Class9])
 	(Escrito_por [KB_191360_Class28])
-	(Juvenil No)
-	(Longitud Corto)
+	(Longitud 384)
 	(Titulo "The Silence of the Lambs")
-	(Valoracion Buena))
+	(Valoracion 8))
 
 ([KB_191360_Class42] of  Libro
 
 	(Anyo 2010)
-	(Dificultad Dificil)
+	(Dificultad 6)
 	(Es_genero [KB_191360_Class21])
+	(Es_tematica [ontology_Class14])
 	(Escrito_por [KB_191360_Class29])
-	(Juvenil No)
-	(Longitud Corto)
+	(Juvenil FALSE)
+	(Longitud 185)
 	(Titulo "House Made of Dawn")
-	(Valoracion Buena))
+	(Valoracion 6))
 
 ([KB_191360_Class43] of  Libro
 
 	(Anyo 2010)
-	(Dificultad Dificil)
+	(Dificultad 6)
 	(Es_genero [KB_191360_Class21])
+	(Es_tematica [ontology_Class14])
 	(Escrito_por [KB_191360_Class32])
-	(Juvenil No)
-	(Longitud Largo)
+	(Longitud 864)
 	(Titulo "Lonesome Dove")
-	(Valoracion Buena))
+	(Valoracion 8))
 
 ([KB_191360_Class44] of  Libro
 
 	(Anyo 2019)
 	(Bestseller TRUE)
-	(Dificultad Facil)
+	(Dificultad 7)
 	(Es_genero
 		[KB_191360_Class24]
 		[KB_191360_Class22])
+	(Es_tematica [ontology_Class16])
 	(Escrito_por [KB_191360_Class33])
-	(Juvenil No)
-	(Longitud Corto)
+	(Longitud 352)
 	(Titulo "Sword of Kings: A Novel")
-	(Valoracion Buena))
+	(Valoracion 8))
 
 ([KB_191360_Class45] of  Libro
 
 	(Anyo 2008)
-	(Dificultad Facil)
+	(Dificultad 6)
 	(Es_genero
 		[KB_191360_Class24]
 		[KB_191360_Class22])
+	(Es_tematica [ontology_Class16])
 	(Escrito_por [KB_191360_Class33])
-	(Juvenil No)
-	(Longitud Corto)
+	(Longitud 352)
 	(Titulo "Lords of the North")
-	(Valoracion Buena))
+	(Valoracion 8))
 
 ([KB_191360_Class46] of  Libro
 
 	(Anyo 2017)
-	(Dificultad Facil)
+	(Dificultad 6)
 	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class19])
 	(Escrito_por [KB_191360_Class34])
-	(Juvenil No)
-	(Longitud Largo)
+	(Longitud 608)
 	(Titulo "The Nightingale")
-	(Valoracion Buena))
+	(Valoracion 8))
 
 ([KB_191360_Class47] of  Libro
 
 	(Anyo 2018)
-	(Dificultad Dificil)
+	(Dificultad 7)
 	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class17])
 	(Escrito_por [KB_191360_Class36])
-	(Juvenil No)
-	(Longitud Corto)
+	(Longitud 320)
 	(Titulo "The Daughter of Sherlock Holmes: A Mystery")
-	(Valoracion Buena))
+	(Valoracion 7))
 
 ([KB_191360_Class48] of  Libro
 
 	(Anyo 2001)
-	(Dificultad Dificil)
+	(Dificultad 7)
 	(Es_genero [KB_191360_Class23])
+	(Es_tematica
+		[ontology_Class8]
+		[ontology_Class12])
 	(Escrito_por [KB_191360_Class36])
-	(Juvenil No)
-	(Longitud Largo)
+	(Longitud 416)
 	(Titulo "Fatal Care")
-	(Valoracion Mala))
+	(Valoracion 7))
 
 ([KB_191360_Class49] of  Libro
 
 	(Anyo 2019)
-	(Dificultad Facil)
+	(Dificultad 7)
 	(Es_genero [KB_191360_Class23])
+	(Es_tematica [ontology_Class6])
 	(Escrito_por [KB_191360_Class37])
-	(Juvenil No)
-	(Longitud Corto)
+	(Longitud 352)
 	(Titulo "The Turn of the Key")
-	(Valoracion Buena))
+	(Valoracion 7))
 
 ([KB_191360_Class50] of  Libro
 
 	(Anyo 2019)
 	(Bestseller TRUE)
-	(Dificultad Dificil)
 	(Es_genero [KB_191360_Class23])
+	(Es_tematica [ontology_Class8])
 	(Escrito_por [KB_191360_Class38])
-	(Juvenil No)
-	(Longitud Corto)
+	(Longitud 384)
 	(Titulo "The Guardians")
-	(Valoracion Buena)))
+	(Valoracion 9))
+
+([ontology_Class12] of  Tematica
+
+	(Libros_tematica [KB_191360_Class48])
+	(NombreTematica "Medical"))
+
+([ontology_Class13] of  Tematica
+
+	(Libros_tematica [KB_191360_Class40])
+	(NombreTematica "Monsters"))
+
+([ontology_Class14] of  Tematica
+
+	(Libros_tematica
+		[KB_191360_Class43]
+		[KB_191360_Class42])
+	(NombreTematica "NativeAmerican"))
+
+([ontology_Class16] of  Tematica
+
+	(Libros_tematica
+		[KB_191360_Class44]
+		[KB_191360_Class45])
+	(NombreTematica "Medieval"))
+
+([ontology_Class17] of  Tematica
+
+	(Libros_tematica [KB_191360_Class47])
+	(NombreTematica "Detective"))
+
+([ontology_Class18] of  Tematica
+
+	(Libros_tematica [KB_191360_Class39])
+	(NombreTematica "Superpowers"))
+
+([ontology_Class19] of  Tematica
+
+	(Libros_tematica [KB_191360_Class46])
+	(NombreTematica "WorldWar"))
+
+([ontology_Class3] of  Nacionalidad
+
+	(Autores_nacionalidad
+		[KB_191360_Class33]
+		[KB_191360_Class26])
+	(NombreNacionalidad "Britanica"))
+
+([ontology_Class4] of  Nacionalidad
+
+	(Autores_nacionalidad
+		[KB_191360_Class38]
+		[KB_191360_Class34]
+		[KB_191360_Class32]
+		[KB_191360_Class36]
+		[KB_191360_Class29]
+		[KB_191360_Class37]
+		[KB_191360_Class25]
+		[KB_191360_Class28])
+	(NombreNacionalidad "Estadounidense"))
+
+([ontology_Class6] of  Tematica
+
+	(Libros_tematica [KB_191360_Class49])
+	(NombreTematica "Psychological"))
+
+([ontology_Class8] of  Tematica
+
+	(Libros_tematica
+		[KB_191360_Class50]
+		[KB_191360_Class48])
+	(NombreTematica "Crime"))
+
+([ontology_Class9] of  Tematica
+
+	(Libros_tematica [KB_191360_Class41])
+	(NombreTematica "SerialKiller")))
 
 
 
@@ -440,7 +626,8 @@
 ;;--------------------------------------------------------------------------------------------------------------------------
 ;; MODULOS
 ;;--------------------------------------------------------------------------------------------------------------------------
-(defmodule MAIN (export ?ALL))
+(defmodule MAIN 
+	(export ?ALL))
 
 (defmodule recopilacion-datos-lector
 	(import MAIN ?ALL)
@@ -451,10 +638,17 @@
 	(import recopilacion-datos-lector ?ALL)
 	(export ?ALL))
 	
+(defmodule recopilacion-datos-libros-leidos
+	(import MAIN ?ALL)
+	(import recopilacion-datos-lector ?ALL)
+	(import recopilacion-datos-preferencias ?ALL)
+	(export ?ALL))
+	
 (defmodule procesado-datos
 	(import MAIN ?ALL)
 	(import recopilacion-datos-lector deftemplate ?ALL)
 	(import recopilacion-datos-preferencias deftemplate ?ALL)
+	(import recopilacion-datos-libros-leidos deftemplate ?ALL)
 	(export ?ALL))
 	
 (defmodule generacion-soluciones
@@ -476,12 +670,15 @@
 	(slot bestseller (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;le gustan los libros populares
 	(slot valoracion (type SYMBOL) (allowed-symbols Si No nulo) (default nulo)) ;se deja llevar por las valoraciones del libro
 	(slot autor_extranjero (type SYMBOL) (allowed-symbols Si No Indiferente nulo) (default nulo))
-	(slot nacionalidad (type STRING) (default "nulo")) ;nacionalidad del lector
-)
+	(slot nacionalidad (type STRING) (default "nulo"))) ;nacionalidad del lector
 	
 (deftemplate MAIN::datos_preferencias_lector
 	(multislot generos_preferidos (type INSTANCE))
-	(multislot autores_preferidos (type INSTANCE)))
+	(multislot autores_preferidos (type INSTANCE))
+	(multislot tematicas_preferidas (type INSTANCE)))
+	
+(deftemplate MAIN::datos_libros_leidos_lector
+	(multislot libros_leidos (type INSTANCE)))
 
 (deftemplate MAIN::lista_recomendaciones_desordenada
 	(multislot recomendaciones (type INSTANCE)))
@@ -496,11 +693,6 @@
 ;;--------------------------------------------------------------------------------------------------------------------------
 ;; FUNCTIONS
 ;;--------------------------------------------------------------------------------------------------------------------------
-(deffunction MAIN::pregunta-libre-alfabetica (?pregunta)
-	(format t "%s: (Ejemplo: Espanyola, Britanica, Estadounidense...): " ?pregunta)
-	(bind ?respuesta (read))
-	?respuesta)
-
 (deffunction MAIN::pregunta-libre-numerica (?pregunta ?rango-inicial ?rango-final)
 	(format t "%s (Valor desde %d hasta %d): " ?pregunta ?rango-inicial ?rango-final)
 	(bind ?respuesta (read))
@@ -538,7 +730,7 @@
 	?lista)
 	
 (deffunction maxima-puntuacion ($?lista)
-	(bind ?maximo -1)
+	(bind ?maximo -999)
 	(bind ?elemento nil)
 	(progn$ (?curr-rec $?lista)
 		(bind ?curr-cont (send ?curr-rec get-nombre_libro_recomendado))
@@ -565,7 +757,15 @@
 	(printout t crlf)
 	(format t "Anyo: %d" ?self:Anyo)
 	(printout t crlf)
-	(format t "Longitud: %s" ?self:Longitud)
+	(format t "Longitud: %d" ?self:Longitud)
+	(printout t crlf)
+	(format t "Dificultad: %d" ?self:Dificultad)
+	(printout t crlf)
+	(format t "Juvenil: %s" ?self:Juvenil)
+	(printout t crlf)
+	(format t "Bestseller: %s" ?self:Bestseller)
+	(printout t crlf)
+	(format t "Valoracion: %d" ?self:Valoracion)
 	(printout t crlf)
 	(format t "Escrito por: %s" (send ?self:Escrito_por get-NombreAutor))
 	(printout t crlf)
@@ -574,6 +774,12 @@
 		(format t "Genero %d: %s" ?i (send ?curr-gen get-NombreGenero))
 		(printout t crlf)
 		(bind ?i (+ ?i 1))
+	)
+	(bind ?j 1)
+	(progn$ (?curr-tem ?self:Es_tematica)
+		(format t "Tematica %d: %s" ?j (send ?curr-tem get-NombreTematica))
+		(printout t crlf)
+		(bind ?j (+ ?j 1))
 	)
 )
 
@@ -659,8 +865,15 @@
 	?n <- (datos_perfil_lector (nacionalidad ?nac))
 	(test (eq ?nac "nulo"))
 	=>
-	(bind ?nac (pregunta-libre-alfabetica "De que nacionalidad eres?"))
-	(modify ?n (nacionalidad ?nac)))
+	(bind $?obj-nacionalidades (find-all-instances ((?inst Nacionalidad)) TRUE))
+	(bind $?nombre-nacionalidades (create$ ))
+	(loop-for-count (?i 1 (length$ $?obj-nacionalidades)) do
+		(bind ?curr-obj (nth$ ?i ?obj-nacionalidades))
+		(bind ?curr-nom (send ?curr-obj get-NombreNacionalidad))
+		(bind $?nombre-nacionalidades (insert$ $?nombre-nacionalidades (+ (length$ $?nombre-nacionalidades) 1) ?curr-nom)))
+	(bind ?escogido (pregunta-respuesta-unica "De que nacionalidad eres?" $?nombre-nacionalidades))
+	(bind ?curr-nacionalidad (nth$ ?escogido ?obj-nacionalidades))
+	(modify ?n (nacionalidad (send ?curr-nacionalidad get-NombreNacionalidad))))
 
 (defrule recopilacion-datos-lector::cambiar-recopilacion-preferencias "Cambia el foco al modulo de recopilacion de preferencias"
 	(declare (salience 10))
@@ -683,6 +896,7 @@
 (deffacts recopilacion-datos-preferencias::init-hechos "Inicializa hechos para poder recopilar datos"
 	(generos_pref ask)
 	(autores_pref ask)
+	(tematicas_pref ask)
 	(datos_preferencias_lector ))
 
 (defrule recopilacion-datos-preferencias::init-generos-preferidos "Inicializa los generos preferidos del lector"
@@ -707,6 +921,29 @@
 	)
 	(retract ?hecho)
 	(modify ?pref (generos_preferidos $?respuesta)))
+	
+(defrule recopilacion-datos-preferencias::init-tematicas-preferidas "Inicializa las tematicas preferidas del lector"
+	?hecho <- (tematicas_pref ask)
+	?pref <- (datos_preferencias_lector)
+	=>
+	(bind $?obj-tematicas (find-all-instances ((?inst Tematica)) TRUE))
+	(bind $?nombre-tematicas (create$ ))
+	(loop-for-count (?i 1 (length$ $?obj-tematicas)) do
+		(bind ?curr-obj (nth$ ?i ?obj-tematicas))
+		(bind ?curr-nom (send ?curr-obj get-NombreTematica))
+		(bind $?nombre-tematicas (insert$ $?nombre-tematicas (+ (length$ $?nombre-tematicas) 1) ?curr-nom)))
+	(bind ?escogido (pregunta-multirespuesta "Escoja sus tematicas preferidas (o 0 en el caso contrario): " $?nombre-tematicas))
+	(assert (tematicas_pref TRUE))
+	(bind $?respuesta (create$ ))
+	(loop-for-count (?i 1 (length$ ?escogido)) do
+		(bind ?curr-index (nth$ ?i ?escogido))
+		(if (= ?curr-index 0)
+			then (assert (tematicas_pref FALSE)))
+		(bind ?curr-tematica (nth$ ?curr-index ?obj-tematicas))
+		(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-tematica))
+	)
+	(retract ?hecho)
+	(modify ?pref (tematicas_preferidas $?respuesta)))
 
 (defrule recopilacion-datos-preferencias::init-autores-preferidos "Inicializa los autores preferidos del lector"
 	?hecho <- (autores_pref ask)
@@ -731,12 +968,52 @@
 	(retract ?hecho)
 	(modify ?pref (autores_preferidos $?respuesta)))
 
-(defrule recopilacion-datos-preferencias::cambiar-procesado-datos "Cambia al modulo de procesado de datos"
+(defrule recopilacion-datos-preferencias::cambiar-recopilacion-datos-libros-leidos "Cambia al modulo de recopilacion de datos de libros leidos del lector"
 	(declare (salience -1))
 	?generos <- (generos_pref TRUE|FALSE)
 	?autores <- (autores_pref TRUE|FALSE)
 	=>
+	(focus recopilacion-datos-libros-leidos))
+
+
+
+
+;;--------------------------------------------------------------------------------------------------------------------------
+;; RECOPILACION DATOS LIBROS LEIDOS
+;;--------------------------------------------------------------------------------------------------------------------------
+(deffacts recopilacion-datos-libros-leidos::init-hechos-libros-leidos "Inicializa hechos para poder recopilar datos"
+	(libros_leid ask)
+	(datos_libros_leidos_lector ))
+	
+(defrule recopilacion-datos-libros-leidos::init-libros-leidos "Inicializa los libros leidos del lector"
+	?hecho <- (libros_leid ask)
+	?pref <- (datos_libros_leidos_lector)
+	=>
+	(bind $?obj-libros (find-all-instances ((?inst Libro)) TRUE))
+	(bind $?nombre-libros (create$ ))
+	(loop-for-count (?i 1 (length$ $?obj-libros)) do
+		(bind ?curr-obj (nth$ ?i ?obj-libros))
+		(bind ?curr-nom (send ?curr-obj get-Titulo))
+		(bind $?nombre-libros (insert$ $?nombre-libros (+ (length$ $?nombre-libros) 1) ?curr-nom)))
+	(bind ?escogido (pregunta-multirespuesta "Escoja los libros que ha leido (o 0 en el caso contrario): " $?nombre-libros))
+	(assert (libros_leid TRUE))
+	(bind $?respuesta (create$ ))
+	(loop-for-count (?i 1 (length$ ?escogido)) do
+		(bind ?curr-index (nth$ ?i ?escogido))
+		(if (= ?curr-index 0)
+			then (assert (libros_leid FALSE)))
+		(bind ?curr-libro (nth$ ?curr-index ?obj-libros))
+		(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-libro))
+	)
+	(retract ?hecho)
+	(modify ?pref (libros_leidos $?respuesta)))
+
+(defrule recopilacion-datos-libros-leidos::cambiar-procesado-datos "Cambia al modulo de procesado de datos"
+	(declare (salience -1))
+	?libros-leidos <- (libros_leid TRUE|FALSE)
+	=>
 	(focus procesado-datos))
+
 
 
 
@@ -761,6 +1038,17 @@
 		then (progn$ (?curr-gen $?gen)
 			(assert (generos ?curr-gen))))
 	(printout t "..." crlf))
+	
+(defrule procesado-datos::init-hechos-tematicas "Inicializa hechos de tematicas para poder procesarlas"
+	(datos_preferencias_lector (tematicas_preferidas $?tem))
+	?hecho <- (tematicas_pref ?aux)
+	(test (or (eq ?aux TRUE) (eq ?aux FALSE)))
+	=>
+	(retract ?hecho)
+	(if (eq ?aux TRUE)
+		then (progn$ (?curr-tem $?tem)
+			(assert (tematicas ?curr-tem))))
+	(printout t "..." crlf))
 
 (defrule procesado-datos::init-hechos-autores "Inicializa hechos de autores para poder procesarlos"
 	(datos_preferencias_lector (autores_preferidos $?gen))
@@ -772,10 +1060,22 @@
 		then (progn$ (?curr-gen $?gen)
 			(assert (autores ?curr-gen))))
 	(printout t "..." crlf))
+	
+(defrule procesado-datos::init-hechos-libros-leidos "Inicializa hechos de libros leidos para poder procesarlos"
+	(datos_libros_leidos_lector (libros_leidos $?lib))
+	?hecho <- (libros_leid ?aux)
+	(test (or (eq ?aux TRUE) (eq ?aux FALSE)))
+	=>
+	(retract ?hecho)
+	(if (eq ?aux TRUE)
+		then (progn$ (?curr-lib $?lib)
+			(assert (libros-leidos ?curr-lib))))
+	(printout t "..." crlf))
 
-(defrule procesado-datos::valorar-libros-dificultad-dificil "Se puntuan los libros con dificultad dificil segun perfil lector"
+
+(defrule procesado-datos::valorar-libros-dificultad-dificil "Se puntuan los libros con dificultad alta segun perfil lector"
 	?cont <- (object (is-a Libro) (Dificultad ?dificultad))
-	(test (eq ?dificultad Dificil))
+	(test (> ?dificultad 6))
 	?frec <- (datos_perfil_lector (frecuencia ?curr-frec))
 	(test (or (eq ?curr-frec 1) (eq ?curr-frec 2)))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
@@ -790,9 +1090,9 @@
 	(assert (valorado-libros-dificultad ?cont))
 	(printout t "Comprobando perfil lector..." crlf))
 	
-(defrule procesado-datos::valorar-libros-dificultad-facil "Se puntuan los libros con dificultad facil segun perfil lector"
+(defrule procesado-datos::valorar-libros-dificultad-facil "Se puntuan los libros con dificultad baja segun perfil lector"
 	?cont <- (object (is-a Libro) (Dificultad ?dificultad))
-	(test (eq ?dificultad Facil))
+	(test (< ?dificultad 7))
 	?frec <- (datos_perfil_lector (frecuencia ?curr-frec))
 	(test (or (eq ?curr-frec 3) (eq ?curr-frec 4)))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
@@ -809,7 +1109,7 @@
 
 (defrule procesado-datos::valorar-libros-longitud-larga "Se puntuan los libros con longitud alta segun perfil lector"
 	?cont <- (object (is-a Libro) (Longitud ?longitud))
-	(test (eq ?longitud Largo))
+	(test (> ?longitud 400))
 	?lug <- (datos_perfil_lector (lugar ?curr-lug))
 	(test (or (eq ?curr-lug 1) (eq ?curr-lug 2)))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
@@ -826,7 +1126,7 @@
 	
 (defrule procesado-datos::valorar-libros-longitud-corta "Se puntuan los libros con longitud corta segun perfil lector"
 	?cont <- (object (is-a Libro) (Longitud ?longitud))
-	(test (eq ?longitud Corto))
+	(test (< ?longitud 401))
 	?lug <- (datos_perfil_lector (lugar ?curr-lug))
 	(test (or (eq ?curr-lug 3) (eq ?curr-lug 4)))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
@@ -860,7 +1160,7 @@
 	
 (defrule procesado-datos::valorar-libros-valoraciones "Se puntuan los libros con buenas valoraciones segun perfil lector"
 	?cont <- (object (is-a Libro) (Valoracion ?valoracion))
-	(test (eq ?valoracion Buena))
+	(test (> ?valoracion 4))
 	?val <- (datos_perfil_lector (valoracion ?curr-val))
 	(test (eq ?curr-val 1))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
@@ -876,11 +1176,11 @@
 	(printout t "Comprobando perfil lector..." crlf))
 	
 (defrule procesado-datos::valorar-autor-extranjero "Se puntuan los libros de autores extranjeros segun perfil lector"
-	?aut <- (object (is-a Autor) (Nacionalidad ?nacionalidad))
+	?aut <- (object (is-a Autor) (Es_nacionalidad ?nacionalidad))
 	?cont <- (object (is-a Libro) (Escrito_por ?escrito))
 	(test (eq (instance-name ?aut) (instance-name ?escrito)))
 	?val <- (datos_perfil_lector (nacionalidad ?curr-nac))
-	(test (neq (str-compare ?nacionalidad ?curr-nac) 0))
+	(test (neq (str-compare ?curr-nac (send ?nacionalidad get-NombreNacionalidad)) 0))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
 	(test (eq (instance-name ?cont) (instance-name ?conta)))
 	(not (valorado-libros-autor-extranjero ?cont))
@@ -895,7 +1195,7 @@
 	
 (defrule procesado-datos::valorar-edad "Se puntuan los libros juveniles segun perfil lector"
 	?cont <- (object (is-a Libro) (Juvenil ?juvenil))
-	(test (eq ?juvenil Si))
+	(test (eq ?juvenil 1))
 	?val <- (datos_perfil_lector (edad ?curr-juv))
 	(test (< ?curr-juv 18))
 	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
@@ -925,6 +1225,22 @@
 	(send ?rec put-justificaciones $?just)
 	(assert (valorado-genero-preferido ?cont ?gen))
 	(printout t "Comprobando generos preferidos..." crlf))
+	
+(defrule procesado-datos::valorar-tematicas-preferidas "Se puntuan los libros de las tematicas preferidas del lector"
+	?hecho <- (tematicas ?tem)
+	?cont <- (object (is-a Libro) (Es_tematica ?tematica))
+	(test (eq (instance-name ?tem) ?tematica))
+	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
+	(test (eq (instance-name ?cont) (instance-name ?conta)))
+	(not (valorado-tematica-preferida ?cont ?tem))
+	=>
+	(bind ?p (+ ?p 50))
+	(bind ?text (str-cat "Pertenece a la tematica preferida: " (send ?tem get-NombreTematica) " -> +50"))
+	(bind $?just (insert$ $?just (+ (length$ $?just) 1) ?text))
+	(send ?rec put-puntuacion ?p)
+	(send ?rec put-justificaciones $?just)
+	(assert (valorado-tematica-preferida ?cont ?tem))
+	(printout t "Comprobando generos preferidos..." crlf))
 
 (defrule procesado-datos::valorar-autores-preferidos "Se puntuan los libros de los autores preferidos del lector"
 	?hecho <- (autores ?auto)
@@ -942,8 +1258,24 @@
 	(assert (valorado-autor-preferido ?cont ?auto))
 	(printout t "Comprobando autores preferidos..." crlf))
 
+(defrule procesado-datos::valorar-libros-leidos "Se puntuan negativamente los libros leidos por el lector"
+	?hecho <- (libros-leidos ?lib)
+	?cont <- (object (is-a Libro))
+	(test (eq (instance-name ?lib) (instance-name ?cont)))
+	?rec <- (object (is-a Recomendacion) (nombre_libro_recomendado ?conta) (puntuacion ?p) (justificaciones $?just))
+	(test (eq (instance-name ?cont) (instance-name ?conta)))
+	(not (valorado-libro-leido ?cont ?lib))
+	=>
+	(bind ?p (- ?p 500))
+	(bind ?text (str-cat "Es un libro ya leido: " (send ?lib get-Titulo) " -> -500"))
+	(bind $?just (insert$ $?just (+ (length$ $?just) 1) ?text))
+	(send ?rec put-puntuacion ?p)
+	(send ?rec put-justificaciones $?just)
+	(assert (valorado-libro-leido ?cont ?lib))
+	(printout t "Comprobando generos preferidos..." crlf))
+
 (defrule procesado-datos::cambiar-generacion-soluciones "Cambia al modulo de generacion de soluciones"
-	(declare (salience -10))
+	(declare (salience -1))
 	=>
 	(printout t "Generando solucion..." crlf)
 	(focus generacion-soluciones))
@@ -956,6 +1288,7 @@
 (defrule generacion-soluciones::init-lista-recomendaciones-desordenada "Inicializa una lista de recomendaciones para ordenarlas"
 	(not (lista_recomendaciones_desordenada))
 	=>
+	(printout t "Inicializando lista desordenada de recomendaciones..." crlf)
 	(assert (lista_recomendaciones_desordenada)))
 
 (defrule generacion-soluciones::anyadir-recomendacion "Anyade una recomendacion a la lista de recomendaciones"
@@ -965,6 +1298,7 @@
 	(test (not (member$ ?rec $?lista)))
 	=>
 	(bind $?lista (insert$ $?lista (+ (length$ $?lista) 1) ?rec))
+	(printout t "Anyadiendo recomendacion..." crlf)
 	(modify ?hecho (recomendaciones $?lista)))
 	
 (defrule generacion-soluciones::init-lista-recomendaciones-ordenada-por-bestseller "Inicializa una lista ordenada de recomendaciones por bestseller"
@@ -977,20 +1311,21 @@
 		(bind $?lista (delete-member$ $?lista ?curr-rec))
 		(bind $?resultado (insert$ $?resultado (+ (length$ $?resultado) 1) ?curr-rec)))
 	(assert (lista_recomendaciones_ordenada_por_bestseller (recomendaciones $?resultado)))
-	(printout t "Ordenando libros..." crlf))
+	(printout t "Ordenando libros por bestseller..." crlf))
 	
 (defrule generacion-soluciones::init-lista-recomendaciones-ordenada-por-puntuacion "Inicializa una lista ordenada de recomendaciones por puntuacion"
 	(not (lista_recomendaciones_ordenada_por_puntuacion))
 	(lista_recomendaciones_ordenada_por_bestseller (recomendaciones $?lista))
-	;(lista_recomendaciones_desordenada (recomendaciones $?lista))
 	=>
+	(printout t "Entrada ordenacion por puntuacion..." crlf)
+	(format t "Tamanyo lista %d" (length$ $?lista))
 	(bind $?resultado (create$ ))
 	(while (not (eq (length$ $?lista) 0)) do
 		(bind ?curr-rec (maxima-puntuacion $?lista))
 		(bind $?lista (delete-member$ $?lista ?curr-rec))
 		(bind $?resultado (insert$ $?resultado (+ (length$ $?resultado) 1) ?curr-rec)))
 	(assert (lista_recomendaciones_ordenada_por_puntuacion (recomendaciones $?resultado)))
-	(printout t "Ordenando libros..." crlf))
+	(printout t "Ordenando libros por puntuacion..." crlf))
 
 (defrule generacion-soluciones::cambiar-presentar-resultados "Cambia el modulo a presentar resultados"
 	(declare (salience -10))
