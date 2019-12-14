@@ -35,6 +35,16 @@
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class45"/>
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class46"/>
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class47"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10024"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10025"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10028"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10029"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10030"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10031"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10034"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10035"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10038"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10039"/>
 </kb:Genero>
 <kb:Genero rdf:about="&kb;KB_191360_Class23"
 	 kb:NombreGenero="Thriller"
@@ -54,6 +64,8 @@
 	<kb:Autores_genero rdf:resource="&kb;KB_191360_Class33"/>
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class44"/>
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class45"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10028"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10029"/>
 </kb:Genero>
 <kb:Autor rdf:about="&kb;KB_191360_Class25"
 	 kb:NombreAutor="Stephen King"
@@ -269,6 +281,322 @@
 	<kb:Escrito_por rdf:resource="&kb;KB_191360_Class38"/>
 	<kb:Es_tematica rdf:resource="&kb;ontology_Class8"/>
 </kb:Libro>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class0"
+	 kb:NombreNacionalidad="Canadiense"
+	 rdfs:label="Canadiense"/>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class1"
+	 kb:NombreNacionalidad="Francesa"
+	 rdfs:label="Francesa">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10026"/>
+</kb:Nacionalidad>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class10003"
+	 kb:NombreNacionalidad="Japonesa"
+	 rdfs:label="Japonesa"/>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class10004"
+	 kb:NombreNacionalidad="Rusa"
+	 rdfs:label="Rusa"/>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class10005"
+	 kb:NombreNacionalidad="Checa"
+	 rdfs:label="Checa">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10042"/>
+</kb:Nacionalidad>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class10006"
+	 kb:NombreNacionalidad="Sueca"
+	 rdfs:label="Sueca">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10028"/>
+</kb:Nacionalidad>
+<kb:Genero rdf:about="&kb;ontology_Class10007"
+	 kb:NombreGenero="Classics"
+	 rdfs:label="Classics">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10026"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10027"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10030"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10031"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10032"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10033"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10036"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10037"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10038"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10039"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10040"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10041"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10042"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10043"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;ontology_Class10008"
+	 kb:NombreGenero="Fantasy"
+	 rdfs:label="Fantasy">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10026"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10027"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;ontology_Class10009"
+	 kb:NombreGenero="Humor"
+	 rdfs:label="Humor"/>
+<kb:Genero rdf:about="&kb;ontology_Class10010"
+	 kb:NombreGenero="Philosophical"
+	 rdfs:label="Philosophical">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10028"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10029"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10042"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10043"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;ontology_Class10011"
+	 kb:NombreGenero="Romance"
+	 rdfs:label="Romance">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10032"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10033"/>
+</kb:Genero>
+<kb:Genero rdf:about="&kb;ontology_Class10012"
+	 kb:NombreGenero="Suspense"
+	 rdfs:label="Suspense"/>
+<kb:Tematica rdf:about="&kb;ontology_Class10014"
+	 kb:NombreTematica="Adventures"
+	 rdfs:label="Adventures">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10027"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10041"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class10015"
+	 kb:NombreTematica="Contemporary"
+	 rdfs:label="Contemporary">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10031"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10039"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class10016"
+	 kb:NombreTematica="Dystopia"
+	 rdfs:label="Dystopia">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10037"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class10017"
+	 kb:NombreTematica="Feminism"
+	 rdfs:label="Feminism"/>
+<kb:Tematica rdf:about="&kb;ontology_Class10018"
+	 kb:NombreTematica="LGBT"
+	 rdfs:label="LGBT"/>
+<kb:Tematica rdf:about="&kb;ontology_Class10019"
+	 kb:NombreTematica="Love"
+	 rdfs:label="Love">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10033"/>
+</kb:Tematica>
+<kb:Tematica rdf:about="&kb;ontology_Class10020"
+	 kb:NombreTematica="Mythology"
+	 rdfs:label="Mythology"/>
+<kb:Tematica rdf:about="&kb;ontology_Class10021"
+	 kb:NombreTematica="Paranormal"
+	 rdfs:label="Paranormal"/>
+<kb:Tematica rdf:about="&kb;ontology_Class10022"
+	 kb:NombreTematica="Political"
+	 rdfs:label="Political"/>
+<kb:Tematica rdf:about="&kb;ontology_Class10023"
+	 kb:NombreTematica="ScienceFiction"
+	 rdfs:label="ScienceFiction">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10035"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10037"/>
+</kb:Tematica>
+<kb:Autor rdf:about="&kb;ontology_Class10024"
+	 kb:NombreAutor="Ann Patchett"
+	 rdfs:label="Ann Patchett">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10025"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10025"
+	 kb:Anyo="2019"
+	 kb:Dificultad="7"
+	 kb:Juvenil="true"
+	 kb:Longitud="352"
+	 kb:Titulo="The Dutch House"
+	 kb:Valoracion="8"
+	 rdfs:label="The Dutch House">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10024"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class19"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10026"
+	 kb:NombreAutor="Antoine de Saint Exupery"
+	 rdfs:label="Antoine de Saint Exupery">
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class1"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10027"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10027"
+	 kb:Anyo="1943"
+	 kb:Bestseller="true"
+	 kb:Dificultad="6"
+	 kb:Juvenil="true"
+	 kb:Longitud="120"
+	 kb:Titulo="The Little Prince"
+	 kb:Valoracion="9"
+	 rdfs:label="The Little Prince">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10014"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10026"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10028"
+	 kb:NombreAutor="Art Spiegelman"
+	 rdfs:label="Art Spiegelman">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class10006"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10029"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10029"
+	 kb:Anyo="1991"
+	 kb:Dificultad="6"
+	 kb:Longitud="296"
+	 kb:Titulo="Maus"
+	 kb:Valoracion="10"
+	 rdfs:label="Maus">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10028"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class19"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10030"
+	 kb:NombreAutor="Charles Dickens"
+	 rdfs:label="Charles Dickens">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10031"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10031"
+	 kb:Anyo="1859"
+	 kb:Bestseller="true"
+	 kb:Dificultad="9"
+	 kb:Juvenil="true"
+	 kb:Longitud="341"
+	 kb:Titulo="A Tale Of  Two Cities"
+	 kb:Valoracion="7"
+	 rdfs:label="A Tale Of  Two Cities">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10015"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10030"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10032"
+	 kb:NombreAutor="Charlotte Bronte"
+	 rdfs:label="Charlotte Bronte">
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10011"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10033"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10033"
+	 kb:Anyo="1847"
+	 kb:Bestseller="true"
+	 kb:Dificultad="9"
+	 kb:Longitud="600"
+	 kb:Titulo="Jane Eyre"
+	 kb:Valoracion="8"
+	 rdfs:label="Jane Eyre">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10011"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10019"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10032"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10034"
+	 kb:NombreAutor="Colson Whitehead"
+	 rdfs:label="Colson Whitehead">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10035"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10035"
+	 kb:Anyo="2019"
+	 kb:Dificultad="6"
+	 kb:Longitud="224"
+	 kb:Titulo="The Nickel Boys"
+	 kb:Valoracion="8"
+	 rdfs:label="The Nickel Boys">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10034"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10036"
+	 kb:NombreAutor="Comac McCarthy"
+	 rdfs:label="Comac McCarthy">
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10037"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10037"
+	 kb:Anyo="2006"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Longitud="241"
+	 kb:Titulo="The Road"
+	 kb:Valoracion="8"
+	 rdfs:label="The Road">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10016"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10036"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10038"
+	 kb:NombreAutor="Elizabeth Strout"
+	 rdfs:label="Elizabeth Strout">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10039"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10039"
+	 kb:Anyo="2019"
+	 kb:Dificultad="7"
+	 kb:Longitud="304"
+	 kb:Titulo="Olive, Again"
+	 kb:Valoracion="9"
+	 rdfs:label="Olive, Again">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10015"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10038"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10040"
+	 kb:NombreAutor="Ernest Hemingway"
+	 rdfs:label="Ernest Hemingway">
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10041"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10041"
+	 kb:Anyo="1952"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Juvenil="true"
+	 kb:Longitud="127"
+	 kb:Titulo="The Old Man And The Sea"
+	 kb:Valoracion="8"
+	 rdfs:label="The Old Man And The Sea">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10014"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10040"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class10042"
+	 kb:NombreAutor="Franz Kafka"
+	 rdfs:label="Franz Kafka">
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class10005"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10043"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10043"
+	 kb:Anyo="1925"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Longitud="255"
+	 kb:Titulo="The Trial"
+	 kb:Valoracion="8"
+	 rdfs:label="The Trial">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10042"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class8"/>
+</kb:Libro>
 <kb:Tematica rdf:about="&kb;ontology_Class12"
 	 kb:NombreTematica="Medical"
 	 rdfs:label="Medical">
@@ -305,12 +633,19 @@
 	 kb:NombreTematica="WorldWar"
 	 rdfs:label="WorldWar">
 	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class46"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10025"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10029"/>
 </kb:Tematica>
+<kb:Nacionalidad rdf:about="&kb;ontology_Class2"
+	 kb:NombreNacionalidad="Griega"
+	 rdfs:label="Griega"/>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class3"
 	 kb:NombreNacionalidad="Britanica"
 	 rdfs:label="Britanica">
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class26"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class33"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10030"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10032"/>
 </kb:Nacionalidad>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class4"
 	 kb:NombreNacionalidad="Estadounidense"
@@ -323,6 +658,11 @@
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class36"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class37"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class38"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10024"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10034"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10036"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10038"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10040"/>
 </kb:Nacionalidad>
 <kb:Tematica rdf:about="&kb;ontology_Class6"
 	 kb:NombreTematica="Psychological"
@@ -334,6 +674,7 @@
 	 rdfs:label="Crime">
 	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class48"/>
 	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class50"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10043"/>
 </kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class9"
 	 kb:NombreTematica="SerialKiller"

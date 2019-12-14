@@ -210,18 +210,6 @@
 ;+		(cardinality 0 1)
 		(create-accessor read-write)))
 
-(defclass Tematica
-	(is-a USER)
-	(role concrete)
-	(multislot Libros_tematica
-		(type INSTANCE)
-;+		(allowed-classes Libro)
-		(create-accessor read-write))
-	(single-slot NombreTematica
-		(type STRING)
-;+		(cardinality 1 1)
-		(create-accessor read-write)))
-
 (defclass Nacionalidad
 	(is-a USER)
 	(role concrete)
@@ -234,6 +222,17 @@
 ;+		(cardinality 1 1)
 		(create-accessor read-write)))
 
+(defclass Tematica
+	(is-a USER)
+	(role concrete)
+	(multislot Libros_tematica
+		(type INSTANCE)
+;+		(allowed-classes Libro)
+		(create-accessor read-write))
+	(single-slot NombreTematica
+		(type STRING)
+;+		(cardinality 1 1)
+		(create-accessor read-write)))
 
 
 
@@ -273,12 +272,22 @@
 	(Autores_genero
 		[KB_191360_Class36]
 		[KB_191360_Class34]
-		[KB_191360_Class33])
+		[KB_191360_Class33]
+		[ontology_Class10024]
+		[ontology_Class10028]
+		[ontology_Class10030]
+		[ontology_Class10034]
+		[ontology_Class10038])
 	(Libros_genero
 		[KB_191360_Class47]
 		[KB_191360_Class46]
 		[KB_191360_Class45]
-		[KB_191360_Class44])
+		[KB_191360_Class44]
+		[ontology_Class10025]
+		[ontology_Class10029]
+		[ontology_Class10031]
+		[ontology_Class10035]
+		[ontology_Class10039])
 	(NombreGenero "Historical"))
 
 ([KB_191360_Class23] of  Genero
@@ -297,10 +306,13 @@
 
 ([KB_191360_Class24] of  Genero
 
-	(Autores_genero [KB_191360_Class33])
+	(Autores_genero
+		[KB_191360_Class33]
+		[ontology_Class10028])
 	(Libros_genero
 		[KB_191360_Class44]
-		[KB_191360_Class45])
+		[KB_191360_Class45]
+		[ontology_Class10029])
 	(NombreGenero "War"))
 
 ([KB_191360_Class25] of  Autor
@@ -526,6 +538,352 @@
 	(Titulo "The Guardians")
 	(Valoracion 9))
 
+([ontology_Class0] of  Nacionalidad
+
+	(NombreNacionalidad "Canadiense"))
+
+([ontology_Class1] of  Nacionalidad
+
+	(Autores_nacionalidad [ontology_Class10026])
+	(NombreNacionalidad "Francesa"))
+
+([ontology_Class10003] of  Nacionalidad
+
+	(NombreNacionalidad "Japonesa"))
+
+([ontology_Class10004] of  Nacionalidad
+
+	(NombreNacionalidad "Rusa"))
+
+([ontology_Class10005] of  Nacionalidad
+
+	(Autores_nacionalidad [ontology_Class10042])
+	(NombreNacionalidad "Checa"))
+
+([ontology_Class10006] of  Nacionalidad
+
+	(Autores_nacionalidad [ontology_Class10028])
+	(NombreNacionalidad "Sueca"))
+
+([ontology_Class10007] of  Genero
+
+	(Autores_genero
+		[ontology_Class10026]
+		[ontology_Class10030]
+		[ontology_Class10032]
+		[ontology_Class10036]
+		[ontology_Class10038]
+		[ontology_Class10040]
+		[ontology_Class10042])
+	(Libros_genero
+		[ontology_Class10027]
+		[ontology_Class10031]
+		[ontology_Class10033]
+		[ontology_Class10037]
+		[ontology_Class10039]
+		[ontology_Class10041]
+		[ontology_Class10043])
+	(NombreGenero "Classics"))
+
+([ontology_Class10008] of  Genero
+
+	(Autores_genero [ontology_Class10026])
+	(Libros_genero [ontology_Class10027])
+	(NombreGenero "Fantasy"))
+
+([ontology_Class10009] of  Genero
+
+	(NombreGenero "Humor"))
+
+([ontology_Class10010] of  Genero
+
+	(Autores_genero
+		[ontology_Class10028]
+		[ontology_Class10042])
+	(Libros_genero
+		[ontology_Class10029]
+		[ontology_Class10043])
+	(NombreGenero "Philosophical"))
+
+([ontology_Class10011] of  Genero
+
+	(Autores_genero [ontology_Class10032])
+	(Libros_genero [ontology_Class10033])
+	(NombreGenero "Romance"))
+
+([ontology_Class10012] of  Genero
+
+	(NombreGenero "Suspense"))
+
+([ontology_Class10014] of  Tematica
+
+	(Libros_tematica
+		[ontology_Class10027]
+		[ontology_Class10041])
+	(NombreTematica "Adventures"))
+
+([ontology_Class10015] of  Tematica
+
+	(Libros_tematica
+		[ontology_Class10031]
+		[ontology_Class10039])
+	(NombreTematica "Contemporary"))
+
+([ontology_Class10016] of  Tematica
+
+	(Libros_tematica [ontology_Class10037])
+	(NombreTematica "Dystopia"))
+
+([ontology_Class10017] of  Tematica
+
+	(NombreTematica "Feminism"))
+
+([ontology_Class10018] of  Tematica
+
+	(NombreTematica "LGBT"))
+
+([ontology_Class10019] of  Tematica
+
+	(Libros_tematica [ontology_Class10033])
+	(NombreTematica "Love"))
+
+([ontology_Class10020] of  Tematica
+
+	(NombreTematica "Mythology"))
+
+([ontology_Class10021] of  Tematica
+
+	(NombreTematica "Paranormal"))
+
+([ontology_Class10022] of  Tematica
+
+	(NombreTematica "Political"))
+
+([ontology_Class10023] of  Tematica
+
+	(Libros_tematica
+		[ontology_Class10035]
+		[ontology_Class10037])
+	(NombreTematica "ScienceFiction"))
+
+([ontology_Class10024] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class22])
+	(Ha_escrito [ontology_Class10025])
+	(NombreAutor "Ann Patchett"))
+
+([ontology_Class10025] of  Libro
+
+	(Anyo 2019)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class19])
+	(Escrito_por [ontology_Class10024])
+	(Juvenil TRUE)
+	(Longitud 352)
+	(Titulo "The Dutch House")
+	(Valoracion 8))
+
+([ontology_Class10026] of  Autor
+
+	(Es_nacionalidad [ontology_Class1])
+	(Escribe_genero
+		[ontology_Class10008]
+		[ontology_Class10007])
+	(Ha_escrito [ontology_Class10027])
+	(NombreAutor "Antoine de Saint Exupery"))
+
+([ontology_Class10027] of  Libro
+
+	(Anyo 1943)
+	(Bestseller TRUE)
+	(Dificultad 6)
+	(Es_genero
+		[ontology_Class10008]
+		[ontology_Class10007])
+	(Es_tematica [ontology_Class10014])
+	(Escrito_por [ontology_Class10026])
+	(Juvenil TRUE)
+	(Longitud 120)
+	(Titulo "The Little Prince")
+	(Valoracion 9))
+
+([ontology_Class10028] of  Autor
+
+	(Es_nacionalidad [ontology_Class10006])
+	(Escribe_genero
+		[KB_191360_Class22]
+		[ontology_Class10010]
+		[KB_191360_Class24])
+	(Ha_escrito [ontology_Class10029])
+	(NombreAutor "Art Spiegelman"))
+
+([ontology_Class10029] of  Libro
+
+	(Anyo 1991)
+	(Dificultad 6)
+	(Es_genero
+		[KB_191360_Class24]
+		[KB_191360_Class22]
+		[ontology_Class10010])
+	(Es_tematica [ontology_Class19])
+	(Escrito_por [ontology_Class10028])
+	(Longitud 296)
+	(Titulo "Maus")
+	(Valoracion 10))
+
+([ontology_Class10030] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero
+		[KB_191360_Class22]
+		[ontology_Class10007])
+	(Ha_escrito [ontology_Class10031])
+	(NombreAutor "Charles Dickens"))
+
+([ontology_Class10031] of  Libro
+
+	(Anyo 1859)
+	(Bestseller TRUE)
+	(Dificultad 9)
+	(Es_genero
+		[ontology_Class10007]
+		[KB_191360_Class22])
+	(Es_tematica [ontology_Class10015])
+	(Escrito_por [ontology_Class10030])
+	(Juvenil TRUE)
+	(Longitud 341)
+	(Titulo "A Tale Of  Two Cities")
+	(Valoracion 7))
+
+([ontology_Class10032] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero
+		[ontology_Class10011]
+		[ontology_Class10007])
+	(Ha_escrito [ontology_Class10033])
+	(NombreAutor "Charlotte Bronte"))
+
+([ontology_Class10033] of  Libro
+
+	(Anyo 1847)
+	(Bestseller TRUE)
+	(Dificultad 9)
+	(Es_genero
+		[ontology_Class10007]
+		[ontology_Class10011])
+	(Es_tematica [ontology_Class10019])
+	(Escrito_por [ontology_Class10032])
+	(Longitud 600)
+	(Titulo "Jane Eyre")
+	(Valoracion 8))
+
+([ontology_Class10034] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [KB_191360_Class22])
+	(Ha_escrito [ontology_Class10035])
+	(NombreAutor "Colson Whitehead"))
+
+([ontology_Class10035] of  Libro
+
+	(Anyo 2019)
+	(Dificultad 6)
+	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class10023])
+	(Escrito_por [ontology_Class10034])
+	(Longitud 224)
+	(Titulo "The Nickel Boys")
+	(Valoracion 8))
+
+([ontology_Class10036] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [ontology_Class10007])
+	(Ha_escrito [ontology_Class10037])
+	(NombreAutor "Comac McCarthy"))
+
+([ontology_Class10037] of  Libro
+
+	(Anyo 2006)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero [ontology_Class10007])
+	(Es_tematica
+		[ontology_Class10023]
+		[ontology_Class10016])
+	(Escrito_por [ontology_Class10036])
+	(Longitud 241)
+	(Titulo "The Road")
+	(Valoracion 8))
+
+([ontology_Class10038] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero
+		[ontology_Class10007]
+		[KB_191360_Class22])
+	(Ha_escrito [ontology_Class10039])
+	(NombreAutor "Elizabeth Strout"))
+
+([ontology_Class10039] of  Libro
+
+	(Anyo 2019)
+	(Dificultad 7)
+	(Es_genero
+		[ontology_Class10007]
+		[KB_191360_Class22])
+	(Es_tematica [ontology_Class10015])
+	(Escrito_por [ontology_Class10038])
+	(Longitud 304)
+	(Titulo "Olive, Again")
+	(Valoracion 9))
+
+([ontology_Class10040] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [ontology_Class10007])
+	(Ha_escrito [ontology_Class10041])
+	(NombreAutor "Ernest Hemingway"))
+
+([ontology_Class10041] of  Libro
+
+	(Anyo 1952)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero [ontology_Class10007])
+	(Es_tematica [ontology_Class10014])
+	(Escrito_por [ontology_Class10040])
+	(Juvenil TRUE)
+	(Longitud 127)
+	(Titulo "The Old Man And The Sea")
+	(Valoracion 8))
+
+([ontology_Class10042] of  Autor
+
+	(Es_nacionalidad [ontology_Class10005])
+	(Escribe_genero
+		[ontology_Class10010]
+		[ontology_Class10007])
+	(Ha_escrito [ontology_Class10043])
+	(NombreAutor "Franz Kafka"))
+
+([ontology_Class10043] of  Libro
+
+	(Anyo 1925)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero
+		[ontology_Class10010]
+		[ontology_Class10007])
+	(Es_tematica [ontology_Class8])
+	(Escrito_por [ontology_Class10042])
+	(Longitud 255)
+	(Titulo "The Trial")
+	(Valoracion 8))
+
 ([ontology_Class12] of  Tematica
 
 	(Libros_tematica [KB_191360_Class48])
@@ -562,27 +920,41 @@
 
 ([ontology_Class19] of  Tematica
 
-	(Libros_tematica [KB_191360_Class46])
+	(Libros_tematica
+		[KB_191360_Class46]
+		[ontology_Class10025]
+		[ontology_Class10029])
 	(NombreTematica "WorldWar"))
+
+([ontology_Class2] of  Nacionalidad
+
+	(NombreNacionalidad "Griega"))
 
 ([ontology_Class3] of  Nacionalidad
 
 	(Autores_nacionalidad
+		[KB_191360_Class26]
 		[KB_191360_Class33]
-		[KB_191360_Class26])
+		[ontology_Class10030]
+		[ontology_Class10032])
 	(NombreNacionalidad "Britanica"))
 
 ([ontology_Class4] of  Nacionalidad
 
 	(Autores_nacionalidad
 		[KB_191360_Class38]
+		[KB_191360_Class37]
+		[KB_191360_Class36]
 		[KB_191360_Class34]
 		[KB_191360_Class32]
-		[KB_191360_Class36]
 		[KB_191360_Class29]
-		[KB_191360_Class37]
+		[KB_191360_Class28]
 		[KB_191360_Class25]
-		[KB_191360_Class28])
+		[ontology_Class10024]
+		[ontology_Class10034]
+		[ontology_Class10036]
+		[ontology_Class10038]
+		[ontology_Class10040])
 	(NombreNacionalidad "Estadounidense"))
 
 ([ontology_Class6] of  Tematica
@@ -594,13 +966,18 @@
 
 	(Libros_tematica
 		[KB_191360_Class50]
-		[KB_191360_Class48])
+		[KB_191360_Class48]
+		[ontology_Class10043])
 	(NombreTematica "Crime"))
 
 ([ontology_Class9] of  Tematica
 
 	(Libros_tematica [KB_191360_Class41])
 	(NombreTematica "SerialKiller")))
+
+
+
+
 
 
 
