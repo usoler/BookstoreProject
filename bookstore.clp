@@ -270,24 +270,34 @@
 ([KB_191360_Class22] of  Genero
 
 	(Autores_genero
+		[ontology_Class20003]
+		[ontology_Class10024]
+		[ontology_Class10038]
 		[KB_191360_Class36]
+		[ontology_Class10034]
 		[KB_191360_Class34]
 		[KB_191360_Class33]
-		[ontology_Class10024]
-		[ontology_Class10028]
+		[ontology_Class10000]
 		[ontology_Class10030]
-		[ontology_Class10034]
-		[ontology_Class10038])
+		[ontology_Class10028]
+		[ontology_Class30003]
+		[ontology_Class30005]
+		[ontology_Class30009])
 	(Libros_genero
+		[ontology_Class10029]
+		[ontology_Class20004]
+		[ontology_Class10025]
 		[KB_191360_Class47]
 		[KB_191360_Class46]
 		[KB_191360_Class45]
 		[KB_191360_Class44]
-		[ontology_Class10025]
-		[ontology_Class10029]
-		[ontology_Class10031]
+		[ontology_Class10039]
 		[ontology_Class10035]
-		[ontology_Class10039])
+		[ontology_Class10002]
+		[ontology_Class10031]
+		[ontology_Class30004]
+		[ontology_Class30006]
+		[ontology_Class30010])
 	(NombreGenero "Historical"))
 
 ([KB_191360_Class23] of  Genero
@@ -307,12 +317,14 @@
 ([KB_191360_Class24] of  Genero
 
 	(Autores_genero
+		[ontology_Class10028]
 		[KB_191360_Class33]
-		[ontology_Class10028])
+		[ontology_Class20000])
 	(Libros_genero
 		[KB_191360_Class44]
+		[ontology_Class10029]
 		[KB_191360_Class45]
-		[ontology_Class10029])
+		[ontology_Class20002])
 	(NombreGenero "War"))
 
 ([KB_191360_Class25] of  Autor
@@ -540,6 +552,7 @@
 
 ([ontology_Class0] of  Nacionalidad
 
+	(Autores_nacionalidad [ontology_Class30009])
 	(NombreNacionalidad "Canadiense"))
 
 ([ontology_Class1] of  Nacionalidad
@@ -547,12 +560,60 @@
 	(Autores_nacionalidad [ontology_Class10026])
 	(NombreNacionalidad "Francesa"))
 
+([ontology_Class10000] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero
+		[ontology_Class10009]
+		[ontology_Class10007]
+		[KB_191360_Class22])
+	(Ha_escrito
+		[ontology_Class10002]
+		[ontology_Class10001])
+	(NombreAutor "George Orwell"))
+
+([ontology_Class10001] of  Libro
+
+	(Anyo 1945)
+	(Bestseller TRUE)
+	(Dificultad 4)
+	(Es_genero
+		[ontology_Class10009]
+		[ontology_Class10007])
+	(Es_tematica
+		[ontology_Class10022]
+		[ontology_Class10016])
+	(Escrito_por [ontology_Class10000])
+	(Juvenil TRUE)
+	(Longitud 112)
+	(Titulo "Animal Farm")
+	(Valoracion 8))
+
+([ontology_Class10002] of  Libro
+
+	(Anyo 1949)
+	(Bestseller TRUE)
+	(Dificultad 8)
+	(Es_genero
+		[ontology_Class10009]
+		[KB_191360_Class22])
+	(Es_tematica
+		[ontology_Class10023]
+		[ontology_Class10016])
+	(Escrito_por [ontology_Class10000])
+	(Juvenil TRUE)
+	(Longitud 328)
+	(Titulo "1984")
+	(Valoracion 9))
+
 ([ontology_Class10003] of  Nacionalidad
 
+	(Autores_nacionalidad [ontology_Class30007])
 	(NombreNacionalidad "Japonesa"))
 
 ([ontology_Class10004] of  Nacionalidad
 
+	(Autores_nacionalidad [ontology_Class20009])
 	(NombreNacionalidad "Rusa"))
 
 ([ontology_Class10005] of  Nacionalidad
@@ -568,74 +629,127 @@
 ([ontology_Class10007] of  Genero
 
 	(Autores_genero
+		[ontology_Class20009]
+		[ontology_Class20007]
+		[ontology_Class20005]
+		[ontology_Class20003]
 		[ontology_Class10026]
-		[ontology_Class10030]
-		[ontology_Class10032]
-		[ontology_Class10036]
 		[ontology_Class10038]
+		[ontology_Class10036]
+		[ontology_Class10032]
+		[ontology_Class10000]
+		[ontology_Class10030]
+		[ontology_Class10042]
 		[ontology_Class10040]
-		[ontology_Class10042])
+		[ontology_Class20000]
+		[ontology_Class20009]
+		[ontology_Class30003]
+		[ontology_Class30007]
+		[ontology_Class30009])
 	(Libros_genero
-		[ontology_Class10027]
-		[ontology_Class10031]
-		[ontology_Class10033]
-		[ontology_Class10037]
 		[ontology_Class10039]
+		[ontology_Class10037]
+		[ontology_Class10033]
+		[ontology_Class20010]
+		[ontology_Class10001]
+		[ontology_Class10031]
+		[ontology_Class10043]
 		[ontology_Class10041]
-		[ontology_Class10043])
+		[ontology_Class20008]
+		[ontology_Class20006]
+		[ontology_Class10027]
+		[ontology_Class20004]
+		[ontology_Class20001]
+		[ontology_Class20002]
+		[ontology_Class30004]
+		[ontology_Class30008]
+		[ontology_Class30012])
 	(NombreGenero "Classics"))
 
 ([ontology_Class10008] of  Genero
 
-	(Autores_genero [ontology_Class10026])
-	(Libros_genero [ontology_Class10027])
+	(Autores_genero
+		[ontology_Class10026]
+		[ontology_Class20007]
+		[ontology_Class20000])
+	(Libros_genero
+		[ontology_Class10027]
+		[ontology_Class20008]
+		[ontology_Class20001]
+		[ontology_Class20002])
 	(NombreGenero "Fantasy"))
 
 ([ontology_Class10009] of  Genero
 
+	(Autores_genero [ontology_Class10000])
+	(Libros_genero
+		[ontology_Class10002]
+		[ontology_Class10001])
 	(NombreGenero "Humor"))
 
 ([ontology_Class10010] of  Genero
 
 	(Autores_genero
 		[ontology_Class10028]
-		[ontology_Class10042])
+		[ontology_Class10042]
+		[ontology_Class30009])
 	(Libros_genero
 		[ontology_Class10029]
-		[ontology_Class10043])
+		[ontology_Class10043]
+		[ontology_Class30010]
+		[ontology_Class30011])
 	(NombreGenero "Philosophical"))
 
 ([ontology_Class10011] of  Genero
 
-	(Autores_genero [ontology_Class10032])
-	(Libros_genero [ontology_Class10033])
+	(Autores_genero
+		[ontology_Class10032]
+		[ontology_Class30003])
+	(Libros_genero
+		[ontology_Class10033]
+		[ontology_Class30004])
 	(NombreGenero "Romance"))
 
 ([ontology_Class10012] of  Genero
 
+	(Autores_genero [ontology_Class20009])
+	(Libros_genero [ontology_Class20010])
 	(NombreGenero "Suspense"))
 
 ([ontology_Class10014] of  Tematica
 
 	(Libros_tematica
+		[ontology_Class20006]
+		[ontology_Class10041]
 		[ontology_Class10027]
-		[ontology_Class10041])
+		[ontology_Class20001]
+		[ontology_Class20002])
 	(NombreTematica "Adventures"))
 
 ([ontology_Class10015] of  Tematica
 
 	(Libros_tematica
 		[ontology_Class10031]
-		[ontology_Class10039])
+		[ontology_Class10039]
+		[ontology_Class20004]
+		[ontology_Class30006])
 	(NombreTematica "Contemporary"))
 
 ([ontology_Class10016] of  Tematica
 
-	(Libros_tematica [ontology_Class10037])
+	(Libros_tematica
+		[ontology_Class10002]
+		[ontology_Class10037]
+		[ontology_Class10001]
+		[ontology_Class30008]
+		[ontology_Class30012])
 	(NombreTematica "Dystopia"))
 
 ([ontology_Class10017] of  Tematica
 
+	(Libros_tematica
+		[ontology_Class30011]
+		[ontology_Class30012])
 	(NombreTematica "Feminism"))
 
 ([ontology_Class10018] of  Tematica
@@ -649,6 +763,9 @@
 
 ([ontology_Class10020] of  Tematica
 
+	(Libros_tematica
+		[ontology_Class20008]
+		[ontology_Class20002])
 	(NombreTematica "Mythology"))
 
 ([ontology_Class10021] of  Tematica
@@ -657,13 +774,19 @@
 
 ([ontology_Class10022] of  Tematica
 
+	(Libros_tematica [ontology_Class10001])
 	(NombreTematica "Political"))
 
 ([ontology_Class10023] of  Tematica
 
 	(Libros_tematica
+		[ontology_Class20010]
+		[ontology_Class10002]
+		[ontology_Class10037]
 		[ontology_Class10035]
-		[ontology_Class10037])
+		[ontology_Class30004]
+		[ontology_Class30008]
+		[ontology_Class30011])
 	(NombreTematica "ScienceFiction"))
 
 ([ontology_Class10024] of  Autor
@@ -713,9 +836,9 @@
 
 	(Es_nacionalidad [ontology_Class10006])
 	(Escribe_genero
+		[KB_191360_Class24]
 		[KB_191360_Class22]
-		[ontology_Class10010]
-		[KB_191360_Class24])
+		[ontology_Class10010])
 	(Ha_escrito [ontology_Class10029])
 	(NombreAutor "Art Spiegelman"))
 
@@ -724,9 +847,9 @@
 	(Anyo 1991)
 	(Dificultad 6)
 	(Es_genero
+		[ontology_Class10010]
 		[KB_191360_Class24]
-		[KB_191360_Class22]
-		[ontology_Class10010])
+		[KB_191360_Class22])
 	(Es_tematica [ontology_Class19])
 	(Escrito_por [ontology_Class10028])
 	(Longitud 296)
@@ -737,8 +860,8 @@
 
 	(Es_nacionalidad [ontology_Class3])
 	(Escribe_genero
-		[KB_191360_Class22]
-		[ontology_Class10007])
+		[ontology_Class10007]
+		[KB_191360_Class22])
 	(Ha_escrito [ontology_Class10031])
 	(NombreAutor "Charles Dickens"))
 
@@ -823,8 +946,8 @@
 
 	(Es_nacionalidad [ontology_Class4])
 	(Escribe_genero
-		[ontology_Class10007]
-		[KB_191360_Class22])
+		[KB_191360_Class22]
+		[ontology_Class10007])
 	(Ha_escrito [ontology_Class10039])
 	(NombreAutor "Elizabeth Strout"))
 
@@ -876,8 +999,8 @@
 	(Bestseller TRUE)
 	(Dificultad 7)
 	(Es_genero
-		[ontology_Class10010]
-		[ontology_Class10007])
+		[ontology_Class10007]
+		[ontology_Class10010])
 	(Es_tematica [ontology_Class8])
 	(Escrito_por [ontology_Class10042])
 	(Longitud 255)
@@ -921,60 +1044,323 @@
 ([ontology_Class19] of  Tematica
 
 	(Libros_tematica
+		[ontology_Class10029]
 		[KB_191360_Class46]
-		[ontology_Class10025]
-		[ontology_Class10029])
+		[ontology_Class10025])
 	(NombreTematica "WorldWar"))
 
 ([ontology_Class2] of  Nacionalidad
 
+	(Autores_nacionalidad [ontology_Class20007])
 	(NombreNacionalidad "Griega"))
+
+([ontology_Class20000] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero
+		[ontology_Class10007]
+		[ontology_Class10008]
+		[KB_191360_Class24])
+	(Ha_escrito
+		[ontology_Class20001]
+		[ontology_Class20002])
+	(NombreAutor "JRR Tolkien"))
+
+([ontology_Class20001] of  Libro
+
+	(Anyo 1937)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero
+		[ontology_Class10007]
+		[ontology_Class10008])
+	(Es_tematica [ontology_Class10014])
+	(Escrito_por [ontology_Class20000])
+	(Juvenil TRUE)
+	(Longitud 310)
+	(Titulo "The Hobbit")
+	(Valoracion 9))
+
+([ontology_Class20002] of  Libro
+
+	(Anyo 1954)
+	(Bestseller TRUE)
+	(Dificultad 9)
+	(Es_genero
+		[ontology_Class10007]
+		[ontology_Class10008]
+		[KB_191360_Class24])
+	(Es_tematica
+		[ontology_Class10014]
+		[ontology_Class10020])
+	(Escrito_por [ontology_Class20000])
+	(Juvenil TRUE)
+	(Longitud 1200)
+	(Titulo "The Lord of the Rings")
+	(Valoracion 10))
+
+([ontology_Class20003] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero
+		[ontology_Class10007]
+		[KB_191360_Class22])
+	(Ha_escrito [ontology_Class20004])
+	(NombreAutor "Harper Lee"))
+
+([ontology_Class20004] of  Libro
+
+	(Anyo 1960)
+	(Bestseller TRUE)
+	(Dificultad 5)
+	(Es_genero
+		[ontology_Class10007]
+		[KB_191360_Class22])
+	(Es_tematica [ontology_Class10015])
+	(Escrito_por [ontology_Class20003])
+	(Juvenil TRUE)
+	(Longitud 281)
+	(Titulo "To Kill a Mockingbird")
+	(Valoracion 9))
+
+([ontology_Class20005] of  Autor
+
+	(Es_nacionalidad [ontology_Class4])
+	(Escribe_genero [ontology_Class10007])
+	(Ha_escrito [ontology_Class20006])
+	(NombreAutor "Herman Melville"))
+
+([ontology_Class20006] of  Libro
+
+	(Anyo 1851)
+	(Bestseller TRUE)
+	(Dificultad 8)
+	(Es_genero [ontology_Class10007])
+	(Es_tematica [ontology_Class10014])
+	(Escrito_por [ontology_Class20005])
+	(Juvenil TRUE)
+	(Longitud 585)
+	(Titulo "Moby Dick")
+	(Valoracion 7))
+
+([ontology_Class20007] of  Autor
+
+	(Es_nacionalidad [ontology_Class2])
+	(Escribe_genero
+		[ontology_Class10008]
+		[ontology_Class10007])
+	(Ha_escrito [ontology_Class20008])
+	(NombreAutor "Homer"))
+
+([ontology_Class20008] of  Libro
+
+	(Anyo 1892)
+	(Bestseller TRUE)
+	(Dificultad 8)
+	(Es_genero
+		[ontology_Class10008]
+		[ontology_Class10007])
+	(Es_tematica [ontology_Class10020])
+	(Escrito_por [ontology_Class20007])
+	(Juvenil TRUE)
+	(Longitud 384)
+	(Titulo "The Odyssey")
+	(Valoracion 8))
+
+([ontology_Class20009] of  Autor
+
+	(Es_nacionalidad [ontology_Class10004])
+	(Escribe_genero
+		[ontology_Class10012]
+		[ontology_Class10007])
+	(Ha_escrito [ontology_Class20010])
+	(NombreAutor "Isaac Azimov"))
+
+([ontology_Class20010] of  Libro
+
+	(Anyo 1950)
+	(Dificultad 8)
+	(Es_genero
+		[ontology_Class10012]
+		[ontology_Class10007])
+	(Es_tematica [ontology_Class10023])
+	(Escrito_por [ontology_Class20009])
+	(Juvenil TRUE)
+	(Longitud 253)
+	(Titulo "I, Robot")
+	(Valoracion 9))
 
 ([ontology_Class3] of  Nacionalidad
 
 	(Autores_nacionalidad
+		[ontology_Class10032]
 		[KB_191360_Class26]
-		[KB_191360_Class33]
 		[ontology_Class10030]
-		[ontology_Class10032])
+		[KB_191360_Class33]
+		[ontology_Class20000]
+		[ontology_Class30003]
+		[ontology_Class30005])
 	(NombreNacionalidad "Britanica"))
+
+([ontology_Class30003] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero
+		[ontology_Class10007]
+		[ontology_Class10011]
+		[KB_191360_Class22])
+	(Ha_escrito [ontology_Class30004])
+	(NombreAutor "Jane Austen"))
+
+([ontology_Class30004] of  Libro
+
+	(Anyo 1813)
+	(Bestseller TRUE)
+	(Dificultad 10)
+	(Es_genero
+		[ontology_Class10007]
+		[KB_191360_Class22]
+		[ontology_Class10011])
+	(Es_tematica [ontology_Class10023])
+	(Escrito_por [ontology_Class30003])
+	(Longitud 378)
+	(Titulo "Pride and Perjudice")
+	(Valoracion 9))
+
+([ontology_Class30005] of  Autor
+
+	(Es_nacionalidad [ontology_Class3])
+	(Escribe_genero [KB_191360_Class22])
+	(Ha_escrito [ontology_Class30006])
+	(NombreAutor "Jojo Moyes"))
+
+([ontology_Class30006] of  Libro
+
+	(Anyo 2019)
+	(Dificultad 7)
+	(Es_genero [KB_191360_Class22])
+	(Es_tematica [ontology_Class10015])
+	(Escrito_por [ontology_Class30005])
+	(Juvenil TRUE)
+	(Longitud 374)
+	(Titulo "The Giver of Stars")
+	(Valoracion 8))
+
+([ontology_Class30007] of  Autor
+
+	(Es_nacionalidad [ontology_Class10003])
+	(Escribe_genero [ontology_Class10007])
+	(Ha_escrito [ontology_Class30008])
+	(NombreAutor "Kazuo Ishiguro"))
+
+([ontology_Class30008] of  Libro
+
+	(Anyo 2005)
+	(Bestseller TRUE)
+	(Dificultad 7)
+	(Es_genero [ontology_Class10007])
+	(Es_tematica
+		[ontology_Class10016]
+		[ontology_Class10023])
+	(Escrito_por [ontology_Class30007])
+	(Juvenil TRUE)
+	(Longitud 288)
+	(Titulo "Never Let Me Go")
+	(Valoracion 7))
+
+([ontology_Class30009] of  Autor
+
+	(Es_nacionalidad [ontology_Class0])
+	(Escribe_genero
+		[ontology_Class10007]
+		[KB_191360_Class22]
+		[ontology_Class10010])
+	(Ha_escrito
+		[ontology_Class30010]
+		[ontology_Class30011]
+		[ontology_Class30012])
+	(NombreAutor "Margaret Atwood"))
+
+([ontology_Class30010] of  Libro
+
+	(Anyo 1979)
+	(Dificultad 8)
+	(Es_genero
+		[KB_191360_Class22]
+		[ontology_Class10010])
+	(Es_tematica [ontology_Class6])
+	(Escrito_por [ontology_Class30009])
+	(Longitud 427)
+	(Titulo "Life Before Man")
+	(Valoracion 6))
+
+([ontology_Class30011] of  Libro
+
+	(Anyo 2019)
+	(Bestseller TRUE)
+	(Dificultad 9)
+	(Es_genero [ontology_Class10010])
+	(Es_tematica
+		[ontology_Class10017]
+		[ontology_Class10023])
+	(Escrito_por [ontology_Class30009])
+	(Longitud 432)
+	(Titulo "The Testaments")
+	(Valoracion 7))
+
+([ontology_Class30012] of  Libro
+
+	(Anyo 1985)
+	(Dificultad 7)
+	(Es_genero [ontology_Class10007])
+	(Es_tematica
+		[ontology_Class10016]
+		[ontology_Class10017])
+	(Escrito_por [ontology_Class30009])
+	(Longitud 311)
+	(Titulo "The Handmaind's Tale")
+	(Valoracion 8))
 
 ([ontology_Class4] of  Nacionalidad
 
 	(Autores_nacionalidad
-		[KB_191360_Class38]
-		[KB_191360_Class37]
-		[KB_191360_Class36]
-		[KB_191360_Class34]
-		[KB_191360_Class32]
+		[ontology_Class10040]
 		[KB_191360_Class29]
+		[ontology_Class20005]
 		[KB_191360_Class28]
+		[ontology_Class20003]
 		[KB_191360_Class25]
 		[ontology_Class10024]
-		[ontology_Class10034]
-		[ontology_Class10036]
 		[ontology_Class10038]
-		[ontology_Class10040])
+		[KB_191360_Class38]
+		[KB_191360_Class37]
+		[ontology_Class10036]
+		[KB_191360_Class36]
+		[ontology_Class10034]
+		[KB_191360_Class34]
+		[KB_191360_Class32]
+		[ontology_Class10000])
 	(NombreNacionalidad "Estadounidense"))
 
 ([ontology_Class6] of  Tematica
 
-	(Libros_tematica [KB_191360_Class49])
+	(Libros_tematica
+		[KB_191360_Class49]
+		[ontology_Class30010])
 	(NombreTematica "Psychological"))
 
 ([ontology_Class8] of  Tematica
 
 	(Libros_tematica
 		[KB_191360_Class50]
-		[KB_191360_Class48]
-		[ontology_Class10043])
+		[ontology_Class10043]
+		[KB_191360_Class48])
 	(NombreTematica "Crime"))
 
 ([ontology_Class9] of  Tematica
 
 	(Libros_tematica [KB_191360_Class41])
 	(NombreTematica "SerialKiller")))
-
 
 
 

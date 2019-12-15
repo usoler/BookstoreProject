@@ -35,6 +35,8 @@
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class45"/>
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class46"/>
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class47"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10000"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10002"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10024"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10025"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10028"/>
@@ -45,6 +47,14 @@
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10035"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10038"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10039"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20003"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20004"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30003"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30004"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30005"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30006"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30009"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30010"/>
 </kb:Genero>
 <kb:Genero rdf:about="&kb;KB_191360_Class23"
 	 kb:NombreGenero="Thriller"
@@ -66,6 +76,8 @@
 	<kb:Libros_genero rdf:resource="&kb;KB_191360_Class45"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10028"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10029"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20000"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20002"/>
 </kb:Genero>
 <kb:Autor rdf:about="&kb;KB_191360_Class25"
 	 kb:NombreAutor="Stephen King"
@@ -283,18 +295,64 @@
 </kb:Libro>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class0"
 	 kb:NombreNacionalidad="Canadiense"
-	 rdfs:label="Canadiense"/>
+	 rdfs:label="Canadiense">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class30009"/>
+</kb:Nacionalidad>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class1"
 	 kb:NombreNacionalidad="Francesa"
 	 rdfs:label="Francesa">
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10026"/>
 </kb:Nacionalidad>
+<kb:Autor rdf:about="&kb;ontology_Class10000"
+	 kb:NombreAutor="George Orwell"
+	 rdfs:label="George Orwell">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10001"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class10002"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10009"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class10001"
+	 kb:Anyo="1945"
+	 kb:Bestseller="true"
+	 kb:Dificultad="4"
+	 kb:Juvenil="true"
+	 kb:Longitud="112"
+	 kb:Titulo="Animal Farm"
+	 kb:Valoracion="8"
+	 rdfs:label="Animal Farm">
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10000"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10009"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10016"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10022"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;ontology_Class10002"
+	 kb:Anyo="1949"
+	 kb:Bestseller="true"
+	 kb:Dificultad="8"
+	 kb:Juvenil="true"
+	 kb:Longitud="328"
+	 kb:Titulo="1984"
+	 kb:Valoracion="9"
+	 rdfs:label="1984">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class10000"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10009"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10016"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+</kb:Libro>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class10003"
 	 kb:NombreNacionalidad="Japonesa"
-	 rdfs:label="Japonesa"/>
+	 rdfs:label="Japonesa">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class30007"/>
+</kb:Nacionalidad>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class10004"
 	 kb:NombreNacionalidad="Rusa"
-	 rdfs:label="Rusa"/>
+	 rdfs:label="Rusa">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class20009"/>
+</kb:Nacionalidad>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class10005"
 	 kb:NombreNacionalidad="Checa"
 	 rdfs:label="Checa">
@@ -308,6 +366,8 @@
 <kb:Genero rdf:about="&kb;ontology_Class10007"
 	 kb:NombreGenero="Classics"
 	 rdfs:label="Classics">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10000"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10001"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10026"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10027"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10030"/>
@@ -322,16 +382,42 @@
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10041"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10042"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10043"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20000"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20001"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20002"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20003"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20004"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20005"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20006"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20007"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20008"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20009"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20010"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30003"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30004"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30007"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30008"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30009"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30012"/>
 </kb:Genero>
 <kb:Genero rdf:about="&kb;ontology_Class10008"
 	 kb:NombreGenero="Fantasy"
 	 rdfs:label="Fantasy">
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10026"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10027"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20000"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20001"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20002"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20007"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20008"/>
 </kb:Genero>
 <kb:Genero rdf:about="&kb;ontology_Class10009"
 	 kb:NombreGenero="Humor"
-	 rdfs:label="Humor"/>
+	 rdfs:label="Humor">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class10000"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10001"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class10002"/>
+</kb:Genero>
 <kb:Genero rdf:about="&kb;ontology_Class10010"
 	 kb:NombreGenero="Philosophical"
 	 rdfs:label="Philosophical">
@@ -339,36 +425,56 @@
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10029"/>
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10042"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10043"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30009"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30010"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30011"/>
 </kb:Genero>
 <kb:Genero rdf:about="&kb;ontology_Class10011"
 	 kb:NombreGenero="Romance"
 	 rdfs:label="Romance">
 	<kb:Autores_genero rdf:resource="&kb;ontology_Class10032"/>
 	<kb:Libros_genero rdf:resource="&kb;ontology_Class10033"/>
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class30003"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class30004"/>
 </kb:Genero>
 <kb:Genero rdf:about="&kb;ontology_Class10012"
 	 kb:NombreGenero="Suspense"
-	 rdfs:label="Suspense"/>
+	 rdfs:label="Suspense">
+	<kb:Autores_genero rdf:resource="&kb;ontology_Class20009"/>
+	<kb:Libros_genero rdf:resource="&kb;ontology_Class20010"/>
+</kb:Genero>
 <kb:Tematica rdf:about="&kb;ontology_Class10014"
 	 kb:NombreTematica="Adventures"
 	 rdfs:label="Adventures">
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10027"/>
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10041"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20001"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20002"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20006"/>
 </kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10015"
 	 kb:NombreTematica="Contemporary"
 	 rdfs:label="Contemporary">
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10031"/>
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10039"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20004"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30006"/>
 </kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10016"
 	 kb:NombreTematica="Dystopia"
 	 rdfs:label="Dystopia">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10001"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10002"/>
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10037"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30008"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30012"/>
 </kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10017"
 	 kb:NombreTematica="Feminism"
-	 rdfs:label="Feminism"/>
+	 rdfs:label="Feminism">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30011"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30012"/>
+</kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10018"
 	 kb:NombreTematica="LGBT"
 	 rdfs:label="LGBT"/>
@@ -379,18 +485,28 @@
 </kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10020"
 	 kb:NombreTematica="Mythology"
-	 rdfs:label="Mythology"/>
+	 rdfs:label="Mythology">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20002"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20008"/>
+</kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10021"
 	 kb:NombreTematica="Paranormal"
 	 rdfs:label="Paranormal"/>
 <kb:Tematica rdf:about="&kb;ontology_Class10022"
 	 kb:NombreTematica="Political"
-	 rdfs:label="Political"/>
+	 rdfs:label="Political">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10001"/>
+</kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class10023"
 	 kb:NombreTematica="ScienceFiction"
 	 rdfs:label="ScienceFiction">
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10002"/>
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10035"/>
 	<kb:Libros_tematica rdf:resource="&kb;ontology_Class10037"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class20010"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30004"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30008"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30011"/>
 </kb:Tematica>
 <kb:Autor rdf:about="&kb;ontology_Class10024"
 	 kb:NombreAutor="Ann Patchett"
@@ -638,7 +754,134 @@
 </kb:Tematica>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class2"
 	 kb:NombreNacionalidad="Griega"
-	 rdfs:label="Griega"/>
+	 rdfs:label="Griega">
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class20007"/>
+</kb:Nacionalidad>
+<kb:Autor rdf:about="&kb;ontology_Class20000"
+	 kb:NombreAutor="JRR Tolkien"
+	 rdfs:label="JRR Tolkien">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class20001"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class20002"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class20001"
+	 kb:Anyo="1937"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Juvenil="true"
+	 kb:Longitud="310"
+	 kb:Titulo="The Hobbit"
+	 kb:Valoracion="9"
+	 rdfs:label="The Hobbit">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10014"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class20000"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;ontology_Class20002"
+	 kb:Anyo="1954"
+	 kb:Bestseller="true"
+	 kb:Dificultad="9"
+	 kb:Juvenil="true"
+	 kb:Longitud="1200"
+	 kb:Titulo="The Lord of the Rings"
+	 kb:Valoracion="10"
+	 rdfs:label="The Lord of the Rings">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class24"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10014"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10020"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class20000"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class20003"
+	 kb:NombreAutor="Harper Lee"
+	 rdfs:label="Harper Lee">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class20004"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class20004"
+	 kb:Anyo="1960"
+	 kb:Bestseller="true"
+	 kb:Dificultad="5"
+	 kb:Juvenil="true"
+	 kb:Longitud="281"
+	 kb:Titulo="To Kill a Mockingbird"
+	 kb:Valoracion="9"
+	 rdfs:label="To Kill a Mockingbird">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10015"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class20003"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class20005"
+	 kb:NombreAutor="Herman Melville"
+	 rdfs:label="Herman Melville">
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class20006"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class4"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class20006"
+	 kb:Anyo="1851"
+	 kb:Bestseller="true"
+	 kb:Dificultad="8"
+	 kb:Juvenil="true"
+	 kb:Longitud="585"
+	 kb:Titulo="Moby Dick"
+	 kb:Valoracion="7"
+	 rdfs:label="Moby Dick">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10014"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class20005"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class20007"
+	 kb:NombreAutor="Homer"
+	 rdfs:label="Homer">
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class2"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class20008"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class20008"
+	 kb:Anyo="1892"
+	 kb:Bestseller="true"
+	 kb:Dificultad="8"
+	 kb:Juvenil="true"
+	 kb:Longitud="384"
+	 kb:Titulo="The Odyssey"
+	 kb:Valoracion="8"
+	 rdfs:label="The Odyssey">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10008"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10020"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class20007"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class20009"
+	 kb:NombreAutor="Isaac Azimov"
+	 rdfs:label="Isaac Azimov">
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class10004"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10012"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class20010"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class20010"
+	 kb:Anyo="1950"
+	 kb:Dificultad="8"
+	 kb:Juvenil="true"
+	 kb:Longitud="253"
+	 kb:Titulo="I, Robot"
+	 kb:Valoracion="9"
+	 rdfs:label="I, Robot">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10012"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class20009"/>
+</kb:Libro>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class3"
 	 kb:NombreNacionalidad="Britanica"
 	 rdfs:label="Britanica">
@@ -646,7 +889,121 @@
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class33"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10030"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10032"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class20000"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class30003"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class30005"/>
 </kb:Nacionalidad>
+<kb:Autor rdf:about="&kb;ontology_Class30003"
+	 kb:NombreAutor="Jane Austen"
+	 rdfs:label="Jane Austen">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10011"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class30004"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class30004"
+	 kb:Anyo="1813"
+	 kb:Bestseller="true"
+	 kb:Dificultad="10"
+	 kb:Longitud="378"
+	 kb:Titulo="Pride and Perjudice"
+	 kb:Valoracion="9"
+	 rdfs:label="Pride and Perjudice">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10011"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class30003"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class30005"
+	 kb:NombreAutor="Jojo Moyes"
+	 rdfs:label="Jojo Moyes">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class3"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class30006"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class30006"
+	 kb:Anyo="2019"
+	 kb:Dificultad="7"
+	 kb:Juvenil="true"
+	 kb:Longitud="374"
+	 kb:Titulo="The Giver of Stars"
+	 kb:Valoracion="8"
+	 rdfs:label="The Giver of Stars">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10015"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class30005"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class30007"
+	 kb:NombreAutor="Kazuo Ishiguro"
+	 rdfs:label="Kazuo Ishiguro">
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class10003"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class30008"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class30008"
+	 kb:Anyo="2005"
+	 kb:Bestseller="true"
+	 kb:Dificultad="7"
+	 kb:Juvenil="true"
+	 kb:Longitud="288"
+	 kb:Titulo="Never Let Me Go"
+	 kb:Valoracion="7"
+	 rdfs:label="Never Let Me Go">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10016"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class30007"/>
+</kb:Libro>
+<kb:Autor rdf:about="&kb;ontology_Class30009"
+	 kb:NombreAutor="Margaret Atwood"
+	 rdfs:label="Margaret Atwood">
+	<kb:Escribe_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_nacionalidad rdf:resource="&kb;ontology_Class0"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Escribe_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class30010"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class30011"/>
+	<kb:Ha_escrito rdf:resource="&kb;ontology_Class30012"/>
+</kb:Autor>
+<kb:Libro rdf:about="&kb;ontology_Class30010"
+	 kb:Anyo="1979"
+	 kb:Dificultad="8"
+	 kb:Longitud="427"
+	 kb:Titulo="Life Before Man"
+	 kb:Valoracion="6"
+	 rdfs:label="Life Before Man">
+	<kb:Es_genero rdf:resource="&kb;KB_191360_Class22"/>
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class30009"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class6"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;ontology_Class30011"
+	 kb:Anyo="2019"
+	 kb:Bestseller="true"
+	 kb:Dificultad="9"
+	 kb:Longitud="432"
+	 kb:Titulo="The Testaments"
+	 kb:Valoracion="7"
+	 rdfs:label="The Testaments">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10010"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10017"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10023"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class30009"/>
+</kb:Libro>
+<kb:Libro rdf:about="&kb;ontology_Class30012"
+	 kb:Anyo="1985"
+	 kb:Dificultad="7"
+	 kb:Longitud="311"
+	 kb:Titulo="The Handmaind's Tale"
+	 kb:Valoracion="8"
+	 rdfs:label="The Handmaind's Tale">
+	<kb:Es_genero rdf:resource="&kb;ontology_Class10007"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10016"/>
+	<kb:Es_tematica rdf:resource="&kb;ontology_Class10017"/>
+	<kb:Escrito_por rdf:resource="&kb;ontology_Class30009"/>
+</kb:Libro>
 <kb:Nacionalidad rdf:about="&kb;ontology_Class4"
 	 kb:NombreNacionalidad="Estadounidense"
 	 rdfs:label="Estadounidense">
@@ -658,16 +1015,20 @@
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class36"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class37"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;KB_191360_Class38"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10000"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10024"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10034"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10036"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10038"/>
 	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class10040"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class20003"/>
+	<kb:Autores_nacionalidad rdf:resource="&kb;ontology_Class20005"/>
 </kb:Nacionalidad>
 <kb:Tematica rdf:about="&kb;ontology_Class6"
 	 kb:NombreTematica="Psychological"
 	 rdfs:label="Psychological">
 	<kb:Libros_tematica rdf:resource="&kb;KB_191360_Class49"/>
+	<kb:Libros_tematica rdf:resource="&kb;ontology_Class30010"/>
 </kb:Tematica>
 <kb:Tematica rdf:about="&kb;ontology_Class8"
 	 kb:NombreTematica="Crime"
