@@ -2062,12 +2062,13 @@
 	(loop-for-count (?i 1 (length$ ?escogido)) do
 		(bind ?curr-index (nth$ ?i ?escogido))
 		(if (= ?curr-index 0)
-			then (assert (generos_pref FALSE)))
-		(bind ?curr-genero (nth$ ?curr-index ?obj-generos))
-		(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-genero))
-	)
+			then (assert (generos_pref FALSE))
+			else 
+			(bind ?curr-genero (nth$ ?curr-index ?obj-generos))
+			(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-genero))))
 	(retract ?hecho)
-	(modify ?pref (generos_preferidos $?respuesta)))
+	(if (!= ?curr-index 0)
+		then (modify ?pref (generos_preferidos $?respuesta))))
 	
 (defrule recopilacion-datos-preferencias::init-tematicas-preferidas "Inicializa las tematicas preferidas del lector"
 	?hecho <- (tematicas_pref ask)
@@ -2085,12 +2086,13 @@
 	(loop-for-count (?i 1 (length$ ?escogido)) do
 		(bind ?curr-index (nth$ ?i ?escogido))
 		(if (= ?curr-index 0)
-			then (assert (tematicas_pref FALSE)))
-		(bind ?curr-tematica (nth$ ?curr-index ?obj-tematicas))
-		(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-tematica))
-	)
+			then (assert (tematicas_pref FALSE))
+			else
+			(bind ?curr-tematica (nth$ ?curr-index ?obj-tematicas))
+			(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-tematica))))
 	(retract ?hecho)
-	(modify ?pref (tematicas_preferidas $?respuesta)))
+	(if (!= ?curr-index 0)
+		then (modify ?pref (tematicas_preferidas $?respuesta))))
 
 (defrule recopilacion-datos-preferencias::init-autores-preferidos "Inicializa los autores preferidos del lector"
 	?hecho <- (autores_pref ask)
@@ -2108,12 +2110,13 @@
 	(loop-for-count (?i 1 (length$ ?escogido)) do
 		(bind ?curr-index (nth$ ?i ?escogido))
 		(if (= ?curr-index 0)
-			then (assert (autores_pref FALSE)))
-		(bind ?curr-autor (nth$ ?curr-index ?obj-autores))
-		(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-autor))
-	)
+			then (assert (autores_pref FALSE))
+			else
+			(bind ?curr-autor (nth$ ?curr-index ?obj-autores))
+			(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-autor))))
 	(retract ?hecho)
-	(modify ?pref (autores_preferidos $?respuesta)))
+	(if (!= ?curr-index 0)
+		then (modify ?pref (autores_preferidos $?respuesta))))
 
 (defrule recopilacion-datos-preferencias::cambiar-recopilacion-datos-libros-leidos "Cambia al modulo de recopilacion de datos de libros leidos del lector"
 	(declare (salience -1))
@@ -2148,12 +2151,13 @@
 	(loop-for-count (?i 1 (length$ ?escogido)) do
 		(bind ?curr-index (nth$ ?i ?escogido))
 		(if (= ?curr-index 0)
-			then (assert (libros_leid FALSE)))
-		(bind ?curr-libro (nth$ ?curr-index ?obj-libros))
-		(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-libro))
-	)
+			then (assert (libros_leid FALSE))
+			else
+			(bind ?curr-libro (nth$ ?curr-index ?obj-libros))
+			(bind $?respuesta (insert$ $?respuesta (+ (length$ $?respuesta) 1) ?curr-libro))))
 	(retract ?hecho)
-	(modify ?pref (libros_leidos $?respuesta)))
+	(if (!= ?curr-index 0)
+		then (modify ?pref (libros_leidos $?respuesta))))
 
 (defrule recopilacion-datos-libros-leidos::cambiar-procesado-datos "Cambia al modulo de procesado de datos"
 	(declare (salience -1))
@@ -2387,7 +2391,7 @@
 	(send ?rec put-puntuacion ?p)
 	(send ?rec put-justificaciones $?just)
 	(assert (valorado-tematica-preferida ?cont ?tem))
-	(printout t "Comprobando generos preferidos..." crlf))
+	(printout t "Comprobando tematicas preferidas..." crlf))
 
 (defrule procesado-datos::valorar-autores-preferidos "Se puntuan los libros de los autores preferidos del lector"
 	?hecho <- (autores ?auto)
@@ -2419,7 +2423,7 @@
 	(send ?rec put-puntuacion ?p)
 	(send ?rec put-justificaciones $?just)
 	(assert (valorado-libro-leido ?cont ?lib))
-	(printout t "Comprobando generos preferidos..." crlf))
+	(printout t "Valorando libros leidos..." crlf))
 
 (defrule procesado-datos::cambiar-generacion-soluciones "Cambia al modulo de generacion de soluciones"
 	(declare (salience -1))
