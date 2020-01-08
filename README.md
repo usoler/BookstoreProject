@@ -1,6 +1,5 @@
 # Bookstore Project
-## AI: Knowledge-Based System
-### Score: 11
+## AI: Planning
 ### Team members:
 - Federico Rubinstein Pérez
 - Roger González Herrera
